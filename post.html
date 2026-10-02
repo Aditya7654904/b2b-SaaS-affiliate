@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moira - SaaS Review Article</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #000000;
+      color: #ffffff;
+    }
+    h1, h2, h3, h4, .brand-font {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .stark-card {
+      background-color: #000000;
+      border: 2px solid #ffffff;
+      box-shadow: 4px 4px 0px #ffffff;
+    }
+    .stark-button {
+      background-color: #ffffff;
+      color: #000000;
+      font-weight: 700;
+      border: 2px solid #ffffff;
+      box-shadow: 3px 3px 0px #888888;
+      transition: all 0.15s ease;
+    }
+    .stark-button:hover {
+      background-color: #e5e5e5;
+      transform: translate(-1px, -1px);
+      box-shadow: 5px 5px 0px #ffffff;
+    }
+    .markdown-body h1 { font-family: 'Space Grotesk', sans-serif; font-size: 2rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; text-transform: uppercase; border-bottom: 1px solid #333; padding-bottom: 0.5rem; }
+    .markdown-body h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 700; margin-top: 1.75rem; margin-bottom: 0.75rem; text-transform: uppercase; }
+    .markdown-body h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.25rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+    .markdown-body p { margin-bottom: 1.25rem; color: #d4d4d8; line-height: 1.7; }
+    .markdown-body ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.25rem; color: #d4d4d8; }
+    .markdown-body ol { list-style-type: decimal; padding-left: 1.5rem; margin-bottom: 1.25rem; color: #d4d4d8; }
+    .markdown-body li { margin-bottom: 0.5rem; }
+    .markdown-body blockquote { border-left: 4px solid #ffffff; padding-left: 1rem; margin: 1.5rem 0; font-style: italic; color: #a1a1aa; background: #09090b; padding-top: 0.5rem; padding-bottom: 0.5rem; }
+    .markdown-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; border: 1px solid #333; }
+    .markdown-body th { border: 1px solid #333; padding: 0.75rem; background-color: #18181b; font-family: 'Space Grotesk', sans-serif; text-align: left; }
+    .markdown-body td { border: 1px solid #333; padding: 0.75rem; color: #d4d4d8; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-white selection:text-black">
+
+  <!-- Header / Navigation -->
+  <header class="border-b-2 border-white bg-black sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <span class="text-3xl font-bold tracking-tight brand-font bg-white text-black px-3 py-1">MOIRA</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold tracking-wide uppercase">
+        <a href="index.html#reviews" class="hover:underline underline-offset-4 decoration-2">Reviews</a>
+        <a href="index.html#comparisons" class="hover:underline underline-offset-4 decoration-2">Battles</a>
+        <a href="index.html#framework" class="hover:underline underline-offset-4 decoration-2">Methodology</a>
+      </nav>
+      <a href="index.html" class="stark-button px-5 py-2.5 text-sm uppercase tracking-wider">
+        ← Back to Hub
+      </a>
+    </div>
+  </header>
+
+  <!-- Article Container -->
+  <main class="max-w-4xl mx-auto px-6 py-12 flex-grow w-full">
+    
+    <!-- Article Header Banner -->
+    <div class="stark-card p-8 mb-12 space-y-6">
+      <div class="flex flex-wrap items-center justify-between gap-4 border-b border-zinc-800 pb-4">
+        <span id="article-category" class="font-mono text-xs border border-white px-2.5 py-1 uppercase tracking-wider">SaaS Review</span>
+        <span id="article-date" class="font-mono text-xs text-zinc-400">OCTOBER 2026</span>
+      </div>
+
+      <h1 id="article-title" class="text-3xl md:text-5xl font-bold uppercase tracking-tight leading-tight">
+        HubSpot CRM Deep Dive: Scale Your Sales Pipeline
+      </h1>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4 border-t border-zinc-800 font-mono text-xs">
+        <div>
+          <span class="text-zinc-500 block">OUR RATING</span>
+          <span id="article-rating" class="font-bold text-white text-sm">★ 4.8 / 5.0</span>
+        </div>
+        <div>
+          <span class="text-zinc-500 block">BEST FOR</span>
+          <span id="article-bestfor" class="font-bold text-white text-sm">Mid-Market Sales</span>
+        </div>
+        <div>
+          <span class="text-zinc-500 block">STARTING PRICE</span>
+          <span id="article-price" class="font-bold text-white text-sm">Freemium / $15/mo</span>
+        </div>
+        <div>
+          <span class="text-zinc-500 block">VERIFIED LINK</span>
+          <a id="article-cta" href="#" target="_blank" class="underline text-white font-bold text-sm hover:text-zinc-300">Try Free Trial →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Dynamic Content -->
+    <article id="markdown-content" class="markdown-body">
+      <!-- Fallback / Static Article Body -->
+      <h2>1. Executive Summary</h2>
+      <p>HubSpot CRM remains a dominant choice for B2B teams looking for an integrated ecosystem for contact management, email tracking, and automated pipeline scoring.</p>
+      
+      <h2>2. Key Features Breakdown</h2>
+      <ul>
+        <li><strong>Pipeline Management:</strong> Drag-and-drop deal tracking with automated deal-stage triggers.</li>
+        <li><strong>Email Automation:</strong> Sequence logging, open tracking, and meeting scheduling integrations.</li>
+        <li><strong>Reporting Dashboards:</strong> Custom analytics modules for revenue forecasting.</li>
+      </ul>
+
+      <blockquote>
+        "HubSpot excels at minimizing friction for onboarding sales reps while providing enterprise-grade analytics."
+      </blockquote>
+
+      <h2>3. Pricing & Value Analysis</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Tier</th>
+            <th>Monthly Cost</th>
+            <th>Best Suited For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Free Tools</td>
+            <td>$0</td>
+            <td>Solopreneurs & Seed Startups</td>
+          </tr>
+          <tr>
+            <td>Starter</td>
+            <td>$15 / seat</td>
+            <td>Growing Sales Teams</td>
+          </tr>
+          <tr>
+            <td>Professional</td>
+            <td>$450 / mo</td>
+            <td>Mid-Market Automation</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>4. Final Verdict</h2>
+      <p>If your sales operations require tight alignment between marketing leads and pipeline tracking without months of deployment delay, HubSpot is our top recommendation for 2026.</p>
+    </article>
+
+    <!-- Bottom CTA Banner -->
+    <div class="mt-16 stark-card p-8 text-center space-y-4">
+      <h3 class="text-2xl font-bold uppercase brand-font">Ready to test this software?</h3>
+      <p class="text-zinc-400 text-sm max-w-xl mx-auto">Use our direct partner link to access extended trial options and official B2B onboarding discounts.</p>
+      <div class="pt-2">
+        <a href="#" class="stark-button px-8 py-3.5 inline-block text-sm uppercase">Claim Official Free Trial</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-12 px-6 bg-black text-zinc-400 text-xs border-t border-zinc-800">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="space-y-2 text-center md:text-left">
+        <span class="text-white font-bold text-lg brand-font">MOIRA</span>
+        <p class="max-w-md">Independent B2B SaaS reviews and comparison guides.</p>
+      </div>
+      <div class="text-center md:text-right max-w-md space-y-2">
+        <p class="text-zinc-500">
+          Affiliate Disclosure: Moira earns a commission when you purchase software through our links, at no extra cost to you.
+        </p>
+        <p>© 2026 Moira Media. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Dynamic Markdown Loader Script -->
+  <script>
+    async function loadMarkdownArticle() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const articleFile = urlParams.get('file');
+
+      if (articleFile) {
+        try {
+          const response = await fetch(articleFile);
+          if (response.ok) {
+            const markdownText = await response.text();
+            document.getElementById('markdown-content').innerHTML = marked.parse(markdownText);
+          }
+        } catch (error) {
+          console.error("Could not load markdown file:", error);
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', loadMarkdownArticle);
+  </script>
+
+</body>
+</html>
