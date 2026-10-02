@@ -1,1 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moira - B2B SaaS Recommendations & Reviews</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #000000;
+      color: #ffffff;
+    }
+    h1, h2, h3, h4, .brand-font {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .stark-card {
+      background-color: #000000;
+      border: 2px solid #ffffff;
+      box-shadow: 4px 4px 0px #ffffff;
+      transition: all 0.2s ease;
+    }
+    .stark-card:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px #ffffff;
+    }
+    .stark-button {
+      background-color: #ffffff;
+      color: #000000;
+      font-weight: 700;
+      border: 2px solid #ffffff;
+      box-shadow: 3px 3px 0px #888888;
+      transition: all 0.15s ease;
+    }
+    .stark-button:hover {
+      background-color: #e5e5e5;
+      transform: translate(-1px, -1px);
+      box-shadow: 5px 5px 0px #ffffff;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-white selection:text-black">
 
+  <!-- Navigation -->
+  <header class="border-b-2 border-white bg-black sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="text-3xl font-bold tracking-tight brand-font bg-white text-black px-3 py-1">MOIRA</span>
+      </div>
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold tracking-wide uppercase">
+        <a href="#reviews" class="hover:underline underline-offset-4 decoration-2">Top Reviews</a>
+        <a href="#comparisons" class="hover:underline underline-offset-4 decoration-2">Battles</a>
+        <a href="#framework" class="hover:underline underline-offset-4 decoration-2">Methodology</a>
+      </nav>
+      <a href="#reviews" class="stark-button px-5 py-2.5 text-sm uppercase tracking-wider">
+        Explore SaaS Deals
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="border-b-2 border-white py-20 px-6">
+    <div class="max-w-4xl mx-auto text-center space-y-6">
+      <div class="inline-block border border-white px-4 py-1 text-xs font-mono uppercase tracking-widest bg-zinc-900">
+        Independent B2B Software Intelligence
+      </div>
+      <h1 class="text-4xl md:text-6xl font-bold tracking-tight leading-tight uppercase">
+        We Test & Compare B2B SaaS Tools So You Don't Have To
+      </h1>
+      <p class="text-lg text-zinc-300 max-w-2xl mx-auto font-normal">
+        Unbiased evaluations, workflow breakdowns, and pricing analyses to help growing businesses choose the right software stack.
+      </p>
+      <div class="pt-4 flex flex-wrap justify-center gap-4">
+        <a href="#reviews" class="stark-button px-8 py-3.5 text-base uppercase">
+          Browse Top Reviews
+        </a>
+        <a href="#comparisons" class="border-2 border-white px-8 py-3.5 text-base font-bold uppercase hover:bg-white hover:text-black transition-colors">
+          View Head-to-Head Battles
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Software Reviews Grid -->
+  <section id="reviews" class="py-20 px-6 border-b-2 border-white max-w-7xl mx-auto w-full">
+    <div class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4">
+      <div>
+        <span class="font-mono text-xs text-zinc-400 uppercase tracking-widest">Featured Evaluations</span>
+        <h2 class="text-3xl font-bold uppercase mt-1">Top-Rated SaaS Platforms</h2>
+      </div>
+      <p class="text-zinc-400 text-sm max-w-md">Tested for user experience, integration stability, and true cost efficiency.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Tool 1 -->
+      <div class="stark-card p-6 flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="flex justify-between items-start">
+            <span class="font-bold text-xl uppercase brand-font">HubSpot CRM</span>
+            <span class="bg-white text-black font-mono font-bold text-xs px-2 py-1">★ 4.8/5</span>
+          </div>
+          <p class="text-sm text-zinc-300">Enterprise-grade customer relationship and lead management platform built for scaling teams.</p>
+          <div class="border-t border-zinc-800 pt-3 text-xs font-mono text-zinc-400">
+            BEST FOR: Mid-Market & Enterprise Sales
+          </div>
+        </div>
+        <div class="mt-8 pt-4 border-t border-zinc-800 flex items-center justify-between">
+          <span class="text-xs font-bold text-zinc-400">Freemium / $15/mo</span>
+          <a href="#" class="stark-button text-xs px-3 py-1.5 uppercase">Read Review</a>
+        </div>
+      </div>
+
+      <!-- Tool 2 -->
+      <div class="stark-card p-6 flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="flex justify-between items-start">
+            <span class="font-bold text-xl uppercase brand-font">Notion AI</span>
+            <span class="bg-white text-black font-mono font-bold text-xs px-2 py-1">★ 4.7/5</span>
+          </div>
+          <p class="text-sm text-zinc-300">All-in-one workspace combining docs, databases, and AI-powered knowledge management.</p>
+          <div class="border-t border-zinc-800 pt-3 text-xs font-mono text-zinc-400">
+            BEST FOR: Documentation & Team Wikis
+          </div>
+        </div>
+        <div class="mt-8 pt-4 border-t border-zinc-800 flex items-center justify-between">
+          <span class="text-xs font-bold text-zinc-400">From $8/mo</span>
+          <a href="#" class="stark-button text-xs px-3 py-1.5 uppercase">Read Review</a>
+        </div>
+      </div>
+
+      <!-- Tool 3 -->
+      <div class="stark-card p-6 flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="flex justify-between items-start">
+            <span class="font-bold text-xl uppercase brand-font">ClickUp</span>
+            <span class="bg-white text-black font-mono font-bold text-xs px-2 py-1">★ 4.6/5</span>
+          </div>
+          <p class="text-sm text-zinc-300">Highly customizable project management software designed to replace multiple work apps.</p>
+          <div class="border-t border-zinc-800 pt-3 text-xs font-mono text-zinc-400">
+            BEST FOR: Agile Project Workflows
+          </div>
+        </div>
+        <div class="mt-8 pt-4 border-t border-zinc-800 flex items-center justify-between">
+          <span class="text-xs font-bold text-zinc-400">From $7/mo</span>
+          <a href="#" class="stark-button text-xs px-3 py-1.5 uppercase">Read Review</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Head to Head Comparisons -->
+  <section id="comparisons" class="py-20 px-6 border-b-2 border-white max-w-7xl mx-auto w-full">
+    <div class="mb-12">
+      <span class="font-mono text-xs text-zinc-400 uppercase tracking-widest">Head-to-Head</span>
+      <h2 class="text-3xl font-bold uppercase mt-1">SaaS Software Battles</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="border-2 border-white p-6 bg-zinc-950 space-y-4">
+        <div class="flex items-center justify-between border-b border-zinc-800 pb-3">
+          <span class="font-bold text-lg brand-font">HubSpot vs Salesforce</span>
+          <span class="font-mono text-xs border border-white px-2 py-0.5">CRM Battle</span>
+        </div>
+        <p class="text-sm text-zinc-300">Detailed breakdown comparing onboarding time, API customization, and total cost of ownership.</p>
+        <a href="#" class="inline-block text-xs font-bold uppercase underline underline-offset-4 hover:text-zinc-300">
+          Compare Features & Price →
+        </a>
+      </div>
+
+      <div class="border-2 border-white p-6 bg-zinc-950 space-y-4">
+        <div class="flex items-center justify-between border-b border-zinc-800 pb-3">
+          <span class="font-bold text-lg brand-font">ClickUp vs Monday.com</span>
+          <span class="font-mono text-xs border border-white px-2 py-0.5">PM Battle</span>
+        </div>
+        <p class="text-sm text-zinc-300">Comparing flexibility, reporting tools, and ease of team adoption for remote organizations.</p>
+        <a href="#" class="inline-block text-xs font-bold uppercase underline underline-offset-4 hover:text-zinc-300">
+          Compare Features & Price →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Evaluation Methodology -->
+  <section id="framework" class="py-20 px-6 border-b-2 border-white max-w-7xl mx-auto w-full">
+    <div class="max-w-3xl">
+      <span class="font-mono text-xs text-zinc-400 uppercase tracking-widest">Our Methodology</span>
+      <h2 class="text-3xl font-bold uppercase mt-1 mb-6">How Moira Evaluates Tools</h2>
+      <ol class="space-y-4 font-mono text-sm border-l-2 border-white pl-6">
+        <li>1. Hands-on workflow deployment for a minimum of 14 days.</li>
+        <li>2. Feature testing across security, custom integrations, and data exports.</li>
+        <li>3. Tiered pricing assessment to identify hidden upgrade costs.</li>
+        <li>4. Direct comparative analysis against leading category competitors.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-auto py-12 px-6 bg-black text-zinc-400 text-xs border-t border-zinc-800">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="space-y-2 text-center md:text-left">
+        <span class="text-white font-bold text-lg brand-font">MOIRA</span>
+        <p class="max-w-md">Independent B2B SaaS reviews and comparison guides.</p>
+      </div>
+      <div class="text-center md:text-right max-w-md space-y-2">
+        <p class="text-zinc-500">
+          Affiliate Disclosure: Moira earns a commission when you purchase software through our links, at no extra cost to you.
+        </p>
+        <p>© 2026 Moira Media. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
