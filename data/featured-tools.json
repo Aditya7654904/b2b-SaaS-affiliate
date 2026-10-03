@@ -1,0 +1,32 @@
+[
+  {
+    "id": "hubspot",
+    "title": "HubSpot CRM Platform Review",
+    "rating": "★ 4.8 / 5.0",
+    "price": "From $15/mo",
+    "category": "Sales CRM",
+    "description": "Enterprise customer relationship and lead routing engine for scaling B2B companies.",
+    "slug": "top-crm-tools-2026",
+    "markdown": "# Executive Summary\n\nHubSpot CRM offers scaling enterprise teams a consolidated solution for contact pipeline management, automated email sequences, and revenue tracking."
+  },
+  {
+    "id": "notion",
+    "title": "Notion AI Workspace Evaluation",
+    "rating": "★ 4.7 / 5.0",
+    "price": "From $8/mo",
+    "category": "Productivity",
+    "description": "Connected workspace combining team wikis, project databases, and local LLM search.",
+    "slug": "notion-vs-clickup",
+    "markdown": "# Executive Summary\n\nNotion combines docs, wikis, and relational databases into a single canvas with local generative AI search capabilities."
+  },
+  {
+    "id": "clickup",
+    "title": "ClickUp Project Engine Deep Dive",
+    "rating": "★ 4.6 / 5.0",
+    "price": "From $7/mo",
+    "category": "Project Management",
+    "description": "Customizable project engine designed to unify tasks, goals, and team workload dashboards.",
+    "slug": "notion-vs-clickup",
+    "markdown": "# Executive Summary\n\nClickUp delivers customizable project hierarchy controls and workload dashboards designed to replace separate task tools."
+  }
+]
