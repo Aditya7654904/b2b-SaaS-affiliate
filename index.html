@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Moira - B2B SaaS Recommendations & Reviews</title>
+  <title>Moira - B2B SaaS Recommendations & Tech Stacks</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,7 +41,6 @@
       transform: translate(-1px, -1px);
       box-shadow: 5px 5px 0px #ffffff;
     }
-    /* Typography inside render modal */
     .prose-stark h1, .prose-stark h2, .prose-stark h3 {
       color: #ffffff;
       font-family: 'Space Grotesk', sans-serif;
@@ -61,21 +60,23 @@
 </head>
 <body class="min-h-screen flex flex-col selection:bg-white selection:text-black">
 
-  <!-- Navigation -->
+  <!-- Header Navigation -->
   <header class="border-b-2 border-white bg-black sticky top-0 z-40">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       <div class="flex items-center gap-3">
         <a href="index.html" class="text-3xl font-bold tracking-tight brand-font bg-white text-black px-3 py-1">MOIRA</a>
       </div>
       <nav class="hidden md:flex items-center gap-8 text-sm font-semibold tracking-wide uppercase">
-        <a href="#reviews" class="hover:underline underline-offset-4 decoration-2">Reviews</a>
-        <a href="#articles" class="hover:underline underline-offset-4 decoration-2">Articles & Guides</a>
-        <a href="#comparisons" class="hover:underline underline-offset-4 decoration-2">Battles</a>
+        <a href="#featured-tools" class="hover:underline underline-offset-4 decoration-2">Tools</a>
+        <a href="stack.html" class="hover:underline underline-offset-4 decoration-2">Stacks Directory</a>
+        <a href="#articles" class="hover:underline underline-offset-4 decoration-2">Articles & Markdown Posts</a>
         <a href="#framework" class="hover:underline underline-offset-4 decoration-2">Methodology</a>
       </nav>
-      <a href="#articles" class="stark-button px-5 py-2.5 text-sm uppercase tracking-wider">
-        Read Articles
-      </a>
+      <div class="flex items-center gap-3">
+        <a href="stack.html" class="stark-button px-5 py-2.5 text-sm uppercase tracking-wider">
+          Explore Stacks
+        </a>
+      </div>
     </div>
   </header>
 
@@ -83,174 +84,179 @@
   <section class="border-b-2 border-white py-20 px-6">
     <div class="max-w-4xl mx-auto text-center space-y-6">
       <div class="inline-block border border-white px-4 py-1 text-xs font-mono uppercase tracking-widest bg-zinc-900">
-        Independent B2B Software Intelligence
+        Modular B2B Software Vault
       </div>
       <h1 class="text-4xl md:text-6xl font-bold tracking-tight leading-tight uppercase">
-        We Test & Compare B2B SaaS Tools So You Don't Have To
+        Independent B2B Software Intelligence & Workflows
       </h1>
       <p class="text-lg text-zinc-300 max-w-2xl mx-auto font-normal">
-        Unbiased evaluations, workflow breakdowns, and pricing analyses to help growing businesses choose the right software stack.
+        Curated SaaS stacks, deep-dive Markdown reviews, and comparative analyses for high-growth tech teams.
       </p>
       <div class="pt-4 flex flex-wrap justify-center gap-4">
-        <a href="#reviews" class="stark-button px-8 py-3.5 text-base uppercase">
-          Browse Reviews
+        <a href="stack.html" class="stark-button px-8 py-3.5 text-base uppercase">
+          View Software Stacks →
         </a>
         <a href="#articles" class="border-2 border-white px-8 py-3.5 text-base font-bold uppercase hover:bg-white hover:text-black transition-colors">
-          Explore Latest Articles
+          Browse Articles Vault
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Software Reviews Grid -->
-  <section id="reviews" class="py-20 px-6 border-b-2 border-white max-w-7xl mx-auto w-full">
-    <div class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4">
+  <!-- Curated Software Stacks Highlight (Links to stack.html) -->
+  <section class="py-16 px-6 border-b-2 border-white max-w-7xl mx-auto w-full">
+    <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
       <div>
-        <span class="font-mono text-xs text-zinc-400 uppercase tracking-widest">Featured Evaluations</span>
-        <h2 class="text-3xl font-bold uppercase mt-1">Top-Rated SaaS Platforms</h2>
+        <span class="font-mono text-xs text-zinc-400 uppercase tracking-widest">Stack Directory</span>
+        <h2 class="text-3xl font-bold uppercase mt-1">Curated Tech Bundles</h2>
       </div>
-      <p class="text-zinc-400 text-sm max-w-md">Tested for user experience, integration stability, and true cost efficiency.</p>
+      <a href="stack.html" class="text-xs font-mono uppercase text-zinc-300 hover:text-white underline underline-offset-4">View All Stacks in Directory →</a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="stark-card p-6 flex flex-col justify-between bg-zinc-950">
+        <div class="space-y-3">
+          <span class="border border-white text-xs px-2 py-0.5 font-mono">SALES & CRM</span>
+          <h3 class="text-2xl font-bold uppercase brand-font">Best CRM + Automation Stack</h3>
+          <p class="text-sm text-zinc-300">HubSpot CRM + Zapier + Typeform setup engineered for rapid inbound pipeline routing.</p>
+        </div>
+        <a href="stack.html?id=crm-automation" class="mt-6 inline-block text-xs font-bold uppercase underline underline-offset-4">Explore Stack Architecture →</a>
+      </div>
+
+      <div class="stark-card p-6 flex flex-col justify-between bg-zinc-950">
+        <div class="space-y-3">
+          <span class="border border-white text-xs px-2 py-0.5 font-mono">PRODUCTIVITY</span>
+          <h3 class="text-2xl font-bold uppercase brand-font">Async Remote Operations</h3>
+          <p class="text-sm text-zinc-300">Notion AI + ClickUp + Slack configuration for asynchronous documentation and sprint delivery.</p>
+        </div>
+        <a href="stack.html?id=async-ops" class="mt-6 inline-block text-xs font-bold uppercase underline underline-offset-4">Explore Stack Architecture →</a>
+      </div>
+
+      <div class="stark-card p-6 flex flex-col justify-between bg-zinc-950">
+        <div class="space-y-3">
+          <span class="border border-white text-xs px-2 py-0.5 font-mono">SEO & GROWTH</span>
+          <h3 class="text-2xl font-bold uppercase brand-font">Inbound Marketing Hub</h3>
+          <p class="text-sm text-zinc-300">SEMrush + Substack + Cloudflare setup for organic rank acquisition and newsletter growth.</p>
+        </div>
+        <a href="stack.html?id=inbound-growth" class="mt-6 inline-block text-xs font-bold uppercase underline underline-offset-4">Explore Stack Architecture →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured SaaS Tools -->
+  <section id="featured-tools" class="py-20 px-6 border-b-2 border-white max-w-7xl mx-auto w-full">
+    <div class="mb-12">
+      <span class="font-mono text-xs text-zinc-400 uppercase tracking-widest">SaaS Intelligence Catalog</span>
+      <h2 class="text-3xl font-bold uppercase mt-1">Featured Platforms</h2>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <!-- Tool 1 -->
       <div class="stark-card p-6 flex flex-col justify-between">
         <div class="space-y-4">
           <div class="flex justify-between items-start">
             <span class="font-bold text-xl uppercase brand-font">HubSpot CRM</span>
             <span class="bg-white text-black font-mono font-bold text-xs px-2 py-1">★ 4.8/5</span>
           </div>
-          <p class="text-sm text-zinc-300">Enterprise-grade customer relationship and lead management platform built for scaling teams.</p>
-          <div class="border-t border-zinc-800 pt-3 text-xs font-mono text-zinc-400">
-            BEST FOR: Mid-Market & Enterprise Sales
-          </div>
+          <p class="text-sm text-zinc-300">Enterprise customer relationship and lead routing engine for scaling B2B companies.</p>
         </div>
         <div class="mt-8 pt-4 border-t border-zinc-800 flex items-center justify-between">
-          <span class="text-xs font-bold text-zinc-400">Freemium / $15/mo</span>
-          <button onclick="openArticle('hubspot')" class="stark-button text-xs px-3 py-1.5 uppercase">Read Review</button>
+          <a href="post.html?slug=top-crm-tools-2026" class="text-xs font-mono text-zinc-400 hover:text-white underline">View .md Post</a>
+          <button onclick="openArticleModal('hubspot')" class="stark-button text-xs px-3 py-1.5 uppercase">Live Preview</button>
         </div>
       </div>
 
-      <!-- Tool 2 -->
       <div class="stark-card p-6 flex flex-col justify-between">
         <div class="space-y-4">
           <div class="flex justify-between items-start">
             <span class="font-bold text-xl uppercase brand-font">Notion AI</span>
             <span class="bg-white text-black font-mono font-bold text-xs px-2 py-1">★ 4.7/5</span>
           </div>
-          <p class="text-sm text-zinc-300">All-in-one workspace combining docs, databases, and AI-powered knowledge management.</p>
-          <div class="border-t border-zinc-800 pt-3 text-xs font-mono text-zinc-400">
-            BEST FOR: Documentation & Team Wikis
-          </div>
+          <p class="text-sm text-zinc-300">Connected workspace combining team wikis, project databases, and local LLM search.</p>
         </div>
         <div class="mt-8 pt-4 border-t border-zinc-800 flex items-center justify-between">
-          <span class="text-xs font-bold text-zinc-400">From $8/mo</span>
-          <button onclick="openArticle('notion')" class="stark-button text-xs px-3 py-1.5 uppercase">Read Review</button>
+          <a href="post.html?slug=notion-vs-clickup" class="text-xs font-mono text-zinc-400 hover:text-white underline">View .md Post</a>
+          <button onclick="openArticleModal('notion')" class="stark-button text-xs px-3 py-1.5 uppercase">Live Preview</button>
         </div>
       </div>
 
-      <!-- Tool 3 -->
       <div class="stark-card p-6 flex flex-col justify-between">
         <div class="space-y-4">
           <div class="flex justify-between items-start">
             <span class="font-bold text-xl uppercase brand-font">ClickUp</span>
             <span class="bg-white text-black font-mono font-bold text-xs px-2 py-1">★ 4.6/5</span>
           </div>
-          <p class="text-sm text-zinc-300">Highly customizable project management software designed to replace multiple work apps.</p>
-          <div class="border-t border-zinc-800 pt-3 text-xs font-mono text-zinc-400">
-            BEST FOR: Agile Project Workflows
-          </div>
+          <p class="text-sm text-zinc-300">Customizable project engine designed to unify tasks, goals, and team workload dashboards.</p>
         </div>
         <div class="mt-8 pt-4 border-t border-zinc-800 flex items-center justify-between">
-          <span class="text-xs font-bold text-zinc-400">From $7/mo</span>
-          <button onclick="openArticle('clickup')" class="stark-button text-xs px-3 py-1.5 uppercase">Read Review</button>
+          <a href="post.html?slug=notion-vs-clickup" class="text-xs font-mono text-zinc-400 hover:text-white underline">View .md Post</a>
+          <button onclick="openArticleModal('clickup')" class="stark-button text-xs px-3 py-1.5 uppercase">Live Preview</button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- DEDICATED ARTICLES & INSIGHTS SECTION -->
+  <!-- Markdown Vault Directory Section (Posts Folder Integration) -->
   <section id="articles" class="py-20 px-6 border-b-2 border-white max-w-7xl mx-auto w-full">
     <div class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4">
       <div>
-        <span class="font-mono text-xs text-zinc-400 uppercase tracking-widest">Thought Leadership</span>
-        <h2 class="text-3xl font-bold uppercase mt-1">Articles & SaaS Buying Guides</h2>
+        <span class="font-mono text-xs text-zinc-400 uppercase tracking-widest">Content Vault</span>
+        <h2 class="text-3xl font-bold uppercase mt-1">Markdown Articles & Reviews</h2>
       </div>
-      <p class="text-zinc-400 text-sm max-w-md">In-depth guides on software stack optimization, AI tool deployment, and growth strategy.</p>
+      <p class="text-zinc-400 text-sm max-w-md">Posts rendered directly from your local <code>posts/*.md</code> content vault or via <code>post.html</code> viewer.</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <!-- Article Card 1 -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Article 1 -->
+      <div class="stark-card p-6 flex flex-col justify-between bg-zinc-950">
+        <div class="space-y-4">
+          <div class="flex items-center justify-between text-xs font-mono text-zinc-400">
+            <span class="border border-white text-white px-2 py-0.5">POST</span>
+            <span>top-crm-tools-2026.md</span>
+          </div>
+          <h3 class="text-2xl font-bold uppercase brand-font">Top CRM Tools in 2026</h3>
+          <p class="text-sm text-zinc-300">A full comparative audit on enterprise CRM platforms, deal tracking, and automation capacity.</p>
+        </div>
+        <div class="mt-8 pt-4 border-t border-zinc-800 flex items-center justify-between gap-2">
+          <a href="post.html?slug=top-crm-tools-2026" class="stark-button text-xs px-3 py-2 uppercase text-center flex-1">Open Article →</a>
+          <button onclick="openArticleModal('top_crm_tools')" class="border border-white text-xs px-3 py-2 uppercase hover:bg-white hover:text-black">Quick Edit</button>
+        </div>
+      </div>
+
+      <!-- Article 2 -->
+      <div class="stark-card p-6 flex flex-col justify-between bg-zinc-950">
+        <div class="space-y-4">
+          <div class="flex items-center justify-between text-xs font-mono text-zinc-400">
+            <span class="border border-white text-white px-2 py-0.5">BATTLE</span>
+            <span>notion-vs-clickup.md</span>
+          </div>
+          <h3 class="text-2xl font-bold uppercase brand-font">Notion vs ClickUp Battle</h3>
+          <p class="text-sm text-zinc-300">Comparing wiki customization, task hierarchies, and long-term workspace scalability.</p>
+        </div>
+        <div class="mt-8 pt-4 border-t border-zinc-800 flex items-center justify-between gap-2">
+          <a href="post.html?slug=notion-vs-clickup" class="stark-button text-xs px-3 py-2 uppercase text-center flex-1">Open Article →</a>
+          <button onclick="openArticleModal('notion_vs_clickup')" class="border border-white text-xs px-3 py-2 uppercase hover:bg-white hover:text-black">Quick Edit</button>
+        </div>
+      </div>
+
+      <!-- Article 3 -->
       <div class="stark-card p-6 flex flex-col justify-between bg-zinc-950">
         <div class="space-y-4">
           <div class="flex items-center justify-between text-xs font-mono text-zinc-400">
             <span class="border border-white text-white px-2 py-0.5">GUIDE</span>
-            <span>OCT 2026 • 6 MIN READ</span>
+            <span>best-ai-writing-software.md</span>
           </div>
-          <h3 class="text-2xl font-bold uppercase brand-font">How to Audit Your Company's SaaS Stack in 2026</h3>
-          <p class="text-sm text-zinc-300">
-            A step-by-step audit framework to eliminate duplicate subscriptions, consolidate team seats, and cut software expenses by 30%.
-          </p>
+          <h3 class="text-2xl font-bold uppercase brand-font">Best AI Writing Software</h3>
+          <p class="text-sm text-zinc-300">Evaluating local LLM integration, article generation, and brand voice consistency tools.</p>
         </div>
-        <div class="mt-8 pt-4 border-t border-zinc-800 flex items-center justify-between">
-          <span class="text-xs font-mono text-zinc-400">By Aditya Dharmawat</span>
-          <button onclick="openArticle('saas_audit_guide')" class="stark-button text-xs px-4 py-2 uppercase">Read Article →</button>
-        </div>
-      </div>
-
-      <!-- Article Card 2 -->
-      <div class="stark-card p-6 flex flex-col justify-between bg-zinc-950">
-        <div class="space-y-4">
-          <div class="flex items-center justify-between text-xs font-mono text-zinc-400">
-            <span class="border border-white text-white px-2 py-0.5">STRATEGY</span>
-            <span>SEP 2026 • 8 MIN READ</span>
-          </div>
-          <h3 class="text-2xl font-bold uppercase brand-font">The Rise of AI Knowledge Management for Remote Teams</h3>
-          <p class="text-sm text-zinc-300">
-            Evaluating how modern workspace tools use local LLMs and semantic search to replace traditional internal documentation wikis.
-          </p>
-        </div>
-        <div class="mt-8 pt-4 border-t border-zinc-800 flex items-center justify-between">
-          <span class="text-xs font-mono text-zinc-400">By Moira Research</span>
-          <button onclick="openArticle('ai_knowledge_guide')" class="stark-button text-xs px-4 py-2 uppercase">Read Article →</button>
+        <div class="mt-8 pt-4 border-t border-zinc-800 flex items-center justify-between gap-2">
+          <a href="post.html?slug=best-ai-writing-software" class="stark-button text-xs px-3 py-2 uppercase text-center flex-1">Open Article →</a>
+          <button onclick="openArticleModal('ai_writing')" class="border border-white text-xs px-3 py-2 uppercase hover:bg-white hover:text-black">Quick Edit</button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Head to Head Comparisons -->
-  <section id="comparisons" class="py-20 px-6 border-b-2 border-white max-w-7xl mx-auto w-full">
-    <div class="mb-12">
-      <span class="font-mono text-xs text-zinc-400 uppercase tracking-widest">Head-to-Head</span>
-      <h2 class="text-3xl font-bold uppercase mt-1">SaaS Software Battles</h2>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="border-2 border-white p-6 bg-zinc-950 space-y-4">
-        <div class="flex items-center justify-between border-b border-zinc-800 pb-3">
-          <span class="font-bold text-lg brand-font">HubSpot vs Salesforce</span>
-          <span class="font-mono text-xs border border-white px-2 py-0.5">CRM Battle</span>
-        </div>
-        <p class="text-sm text-zinc-300">Detailed breakdown comparing onboarding time, API customization, and total cost of ownership.</p>
-        <button onclick="openArticle('hubspot_vs_salesforce')" class="inline-block text-xs font-bold uppercase underline underline-offset-4 hover:text-zinc-300">
-          Compare Features & Price →
-        </button>
-      </div>
-
-      <div class="border-2 border-white p-6 bg-zinc-950 space-y-4">
-        <div class="flex items-center justify-between border-b border-zinc-800 pb-3">
-          <span class="font-bold text-lg brand-font">ClickUp vs Monday.com</span>
-          <span class="font-mono text-xs border border-white px-2 py-0.5">PM Battle</span>
-        </div>
-        <p class="text-sm text-zinc-300">Comparing flexibility, reporting tools, and ease of team adoption for remote organizations.</p>
-        <button onclick="openArticle('clickup_vs_monday')" class="inline-block text-xs font-bold uppercase underline underline-offset-4 hover:text-zinc-300">
-          Compare Features & Price →
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Evaluation Methodology -->
+  <!-- Methodology -->
   <section id="framework" class="py-20 px-6 border-b-2 border-white max-w-7xl mx-auto w-full">
     <div class="max-w-3xl">
       <span class="font-mono text-xs text-zinc-400 uppercase tracking-widest">Our Methodology</span>
@@ -271,6 +277,11 @@
         <span class="text-white font-bold text-lg brand-font">MOIRA</span>
         <p class="max-w-md">Independent B2B SaaS reviews and comparison guides.</p>
       </div>
+      <div class="flex items-center gap-6 font-mono">
+        <a href="index.html" class="hover:text-white">Home</a>
+        <a href="stack.html" class="hover:text-white">Stacks Directory</a>
+        <a href="post.html?slug=top-crm-tools-2026" class="hover:text-white">Latest Article</a>
+      </div>
       <div class="text-center md:text-right max-w-md space-y-2">
         <p class="text-zinc-500">
           Affiliate Disclosure: Moira earns a commission when you purchase software through our links, at no extra cost to you.
@@ -280,19 +291,19 @@
     </div>
   </footer>
 
-  <!-- FULLSCREEN INTERACTIVE ARTICLE & EDITOR MODAL -->
+  <!-- FULLSCREEN INTERACTIVE ARTICLE READER & LIVE EDITOR MODAL -->
   <div id="articleModal" class="fixed inset-0 bg-black z-50 hidden flex flex-col overflow-hidden">
     <!-- Modal Header -->
     <div class="border-b-2 border-white bg-black px-6 py-4 flex items-center justify-between shrink-0">
       <div class="flex items-center gap-4">
-        <span class="text-xl font-bold brand-font bg-white text-black px-2 py-0.5">MOIRA ARTICLE</span>
-        <span id="modalCategory" class="text-xs font-mono border border-zinc-700 px-2 py-1 text-zinc-300">CRM & SALES</span>
+        <span class="text-xl font-bold brand-font bg-white text-black px-2 py-0.5">MOIRA LIVE EDITOR</span>
+        <span id="modalCategory" class="text-xs font-mono border border-zinc-700 px-2 py-1 text-zinc-300">POST PREVIEW</span>
       </div>
       <div class="flex items-center gap-3">
         <button onclick="toggleEditor()" class="border border-white text-xs px-3 py-1.5 font-mono uppercase hover:bg-white hover:text-black transition-colors">
           ⚡ Toggle Live Editor
         </button>
-        <button onclick="closeArticle()" class="stark-button text-xs px-4 py-1.5 uppercase">
+        <button onclick="closeArticleModal()" class="stark-button text-xs px-4 py-1.5 uppercase">
           ✕ Close
         </button>
       </div>
@@ -300,14 +311,13 @@
 
     <!-- Modal Content Grid -->
     <div class="flex-1 grid grid-cols-1 lg:grid-cols-12 overflow-hidden">
-      <!-- Article View (Left / Main) -->
+      <!-- Article Preview (Left / Main) -->
       <div id="viewContainer" class="lg:col-span-8 overflow-y-auto p-6 md:p-10 border-r-2 border-white space-y-8">
         
-        <!-- Header Card -->
         <div class="border-2 border-white p-6 bg-zinc-950 space-y-4">
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-zinc-800 pb-4">
             <div>
-              <span id="cardCategory" class="text-xs font-mono text-zinc-400 uppercase tracking-widest">B2B SaaS Article</span>
+              <span id="cardCategory" class="text-xs font-mono text-zinc-400 uppercase tracking-widest">MARKDOWN ARTICLE</span>
               <h1 id="articleTitle" class="text-3xl font-bold uppercase mt-1 brand-font">Article Title</h1>
             </div>
             <div class="text-right">
@@ -315,42 +325,26 @@
               <div id="articlePrice" class="text-xs font-mono text-zinc-400 mt-1">Starting at $15/mo</div>
             </div>
           </div>
-
-          <!-- Quick Specs Breakdown -->
-          <div class="grid grid-cols-2 md:grid-cols-2 gap-4 text-xs font-mono pt-2">
-            <div class="border border-zinc-800 p-3 bg-black">
-              <span class="text-zinc-500 block mb-1">KEY HIGHLIGHTS</span>
-              <ul id="prosList" class="space-y-1 text-emerald-400">
-                <li>+ Excellent user adoption rate</li>
-              </ul>
-            </div>
-            <div class="border border-zinc-800 p-3 bg-black">
-              <span class="text-zinc-500 block mb-1">TAKEAWAYS</span>
-              <ul id="consList" class="space-y-1 text-zinc-300">
-                <li>- Key action points</li>
-              </ul>
-            </div>
-          </div>
         </div>
 
-        <!-- Dynamic Markdown Body -->
+        <!-- Dynamic Markdown Output -->
         <div id="articleBody" class="prose-stark"></div>
 
-        <!-- CTA Banner -->
+        <!-- CTA Box -->
         <div class="border-2 border-white p-6 bg-white text-black space-y-3 mt-10">
           <h3 class="text-xl font-bold uppercase brand-font">Looking to optimize your software stack?</h3>
           <p class="text-sm font-medium">Get custom software recommendations and partner deals for your business.</p>
-          <a id="ctaButton" href="#reviews" onclick="closeArticle()" class="inline-block bg-black text-white px-6 py-3 font-bold text-xs uppercase tracking-wider hover:bg-zinc-800">
-            Explore Top Reviews →
+          <a href="stack.html" class="inline-block bg-black text-white px-6 py-3 font-bold text-xs uppercase tracking-wider hover:bg-zinc-800">
+            Browse All Software Stacks →
           </a>
         </div>
       </div>
 
-      <!-- Live Editor Panel (Right / Collapsible) -->
+      <!-- Live Editor Controls Panel (Right Panel) -->
       <div id="editorContainer" class="lg:col-span-4 bg-zinc-950 p-6 overflow-y-auto space-y-6 flex flex-col border-t-2 lg:border-t-0 border-white">
         <div class="border-b border-zinc-800 pb-3">
           <h2 class="text-lg font-bold uppercase brand-font text-white">Article Live Controls</h2>
-          <p class="text-xs text-zinc-400 font-mono">Edit fields below to see real-time changes on the left.</p>
+          <p class="text-xs text-zinc-400 font-mono">Edit fields below to test live Markdown rendering instantly.</p>
         </div>
 
         <div class="space-y-4 font-mono text-xs">
@@ -365,7 +359,7 @@
               <input type="text" id="editRating" oninput="updateLive()" class="w-full bg-black border border-zinc-700 p-2 text-white focus:border-white outline-none">
             </div>
             <div>
-              <label class="block text-zinc-400 mb-1">PRICE / READ TIME</label>
+              <label class="block text-zinc-400 mb-1">PRICE / METRIC</label>
               <input type="text" id="editPrice" oninput="updateLive()" class="w-full bg-black border border-zinc-700 p-2 text-white focus:border-white outline-none">
             </div>
           </div>
@@ -384,123 +378,66 @@
     </div>
   </div>
 
-  <!-- ARTICLE DATA & CONTROLLER -->
+  <!-- SCRIPT CONTROLLER -->
   <script>
-    const articlesData = {
-      saas_audit_guide: {
-        title: "How to Audit Your Company's SaaS Stack in 2026",
-        rating: "GUIDE",
-        price: "6 Min Read",
-        category: "SaaS Operations",
-        pros: ["Identify redundant subscriptions", "Consolidate unused seats", "Renegotiate enterprise tiers"],
-        cons: ["Requires 3-5 hours of audit time", "Requires admin access to finance records"],
-        markdown: `# Executive Summary
-
-As B2B software stacks expand, companies frequently waste 20-30% of their software budget on overlapping tools and inactive user seats.
-
-### Step-by-Step Audit Framework
-
-1. **Map All Active Subscriptions:** Pull credit card records and vendor invoices for the last 12 months.
-2. **Track Daily Active Users (DAU):** Identify tools with low user login rates over 30 consecutive days.
-3. **Eliminate Feature Overlap:** Replace separate notes, PM, and wiki tools with a unified workspace like Notion or ClickUp.
-4. **Negotiate Annual Discounts:** Shift essential monthly subscriptions to annual billing to secure 15-25% discounts.`
-      },
-      ai_knowledge_guide: {
-        title: "The Rise of AI Knowledge Management for Remote Teams",
-        rating: "STRATEGY",
-        price: "8 Min Read",
-        category: "AI & Productivity",
-        pros: ["Instant Q&A across private docs", "Reduces internal support tickets", "Automatic documentation sync"],
-        cons: ["Requires high data hygiene", "Initial indexing setup needed"],
-        markdown: `# Executive Summary
-
-Traditional internal wikis fail because employees forget to update documentation. Modern AI knowledge managers continuously index documents, chat histories, and project boards to answer team queries instantly.
-
-### Core Strategic Advantages
-
-* **Contextual Retrieval:** Ask "What is our customer refund policy?" and receive exact excerpts from approved policy documents.
-* **Reduced Onboarding Overhead:** New hires can ask questions directly to the internal knowledge base without waiting for mentor responses.`
-      },
+    const modalArticlesData = {
       hubspot: {
-        title: "HubSpot CRM Comprehensive Review (2026)",
+        title: "HubSpot CRM Platform Review",
         rating: "★ 4.8 / 5.0",
-        price: "Freemium / $15/mo",
-        category: "CRM & Sales",
-        pros: ["Seamless marketing & sales sync", "Intuitive pipeline UI", "Generous free tier"],
-        cons: ["Marketing Hub scales steeply in cost", "Custom reporting locked in higher tiers"],
-        markdown: `# Executive Summary
-
-HubSpot CRM remains the benchmark customer relationship management platform for mid-market and fast-scaling B2B teams. With its clean pipeline UI and native integrations, sales representatives adopt it rapidly without requiring extensive technical onboarding.
-
-### Primary Strengths
-* **Ecosystem Integration:** Connects seamlessly with over 1,000 tools including Slack, Gmail, and Stripe.
-* **Automation Workflows:** Sequence emails, deal routing, and contact scoring without writing code.`
+        price: "From $15/mo",
+        category: "Sales CRM",
+        markdown: `# Executive Summary\n\nHubSpot CRM offers scaling enterprise teams a consolidated solution for contact pipeline management, automated email sequences, and revenue tracking.`
       },
       notion: {
-        title: "Notion AI: The Modern Knowledge Engine",
+        title: "Notion AI Workspace Evaluation",
         rating: "★ 4.7 / 5.0",
         price: "From $8/mo",
-        category: "Productivity & AI",
-        pros: ["Unified docs, tasks, and databases", "In-context AI writer and Q&A", "Flexible block structure"],
-        cons: ["Can require heavy initial setup", "Mobile app latency under high load"],
-        markdown: `# Executive Summary
-
-Notion AI transforms static documentation into an active knowledge assistant. By indexing your organization's internal wikis and databases, team members can ask natural language questions and receive accurate context immediately.`
+        category: "Productivity",
+        markdown: `# Executive Summary\n\nNotion combines docs, wikis, and relational databases into a single canvas with local generative AI search capabilities.`
       },
       clickup: {
-        title: "ClickUp 3.0 In-Depth Workflow Evaluation",
+        title: "ClickUp Project Engine Deep Dive",
         rating: "★ 4.6 / 5.0",
         price: "From $7/mo",
         category: "Project Management",
-        pros: ["Ultra-customizable view hierarchy", "Built-in time tracking & goals", "Strong price-to-feature ratio"],
-        cons: ["Steep learning curve for new users", "Can feel feature-dense"],
-        markdown: `# Executive Summary
-
-ClickUp delivers an all-in-one project management hub designed to consolidate separate task trackers, whiteboards, and time sheets into a single workspace.`
+        markdown: `# Executive Summary\n\nClickUp delivers customizable project hierarchy controls and workload dashboards designed to replace separate task tools.`
       },
-      hubspot_vs_salesforce: {
-        title: "HubSpot vs Salesforce: Enterprise CRM Showdown",
-        rating: "★ 4.8 / 5.0",
-        price: "Comparison Battle",
-        category: "Head-to-Head",
-        pros: ["HubSpot: Faster setup & lower admin overhead", "Salesforce: Unlimited API & custom object depth"],
-        cons: ["HubSpot: High enterprise scaling price", "Salesforce: Requires dedicated administrator"],
-        markdown: `# Head-to-Head Battle: HubSpot vs Salesforce
-
-Choosing between HubSpot and Salesforce depends on your company's implementation capacity and technical requirements.`
+      top_crm_tools: {
+        title: "Top CRM Tools in 2026 (top-crm-tools-2026.md)",
+        rating: "GUIDE",
+        price: "10 Min Read",
+        category: "Sales Stack",
+        markdown: `# Top CRM Tools Breakdown\n\nIn-depth analysis of modern sales CRMs, evaluating pipeline speed, custom objects, and API stability.`
       },
-      clickup_vs_monday: {
-        title: "ClickUp vs Monday.com: Work Management Compared",
-        rating: "★ 4.7 / 5.0",
-        price: "Comparison Battle",
-        category: "Head-to-Head",
-        pros: ["ClickUp: Highly customizable hierarchy", "Monday: Vibrant UI & instant onboarding"],
-        cons: ["ClickUp: High density of controls", "Monday: Higher price tier for column formulas"],
-        markdown: `# Head-to-Head Battle: ClickUp vs Monday.com
-
-Both platforms lead the work management space, but they cater to slightly different team preferences.`
+      notion_vs_clickup: {
+        title: "Notion vs ClickUp (notion-vs-clickup.md)",
+        rating: "BATTLE",
+        price: "8 Min Read",
+        category: "Workspace Battle",
+        markdown: `# Notion vs ClickUp Battle\n\nComparing document-first knowledge bases against task-first project engines for remote teams.`
+      },
+      ai_writing: {
+        title: "Best AI Writing Software (best-ai-writing-software.md)",
+        rating: "EVALUATION",
+        price: "6 Min Read",
+        category: "AI Content",
+        markdown: `# AI Writing Software Review\n\nEvaluating natural language quality, SEO optimizations, and brand voice customization in modern AI writing platforms.`
       }
     };
 
-    function openArticle(key) {
-      const article = articlesData[key] || articlesData['saas_audit_guide'];
-
+    function openArticleModal(key) {
+      const article = modalArticlesData[key] || modalArticlesData['hubspot'];
       document.getElementById('editTitle').value = article.title;
       document.getElementById('editRating').value = article.rating;
       document.getElementById('editPrice').value = article.price;
       document.getElementById('editCategory').value = article.category;
       document.getElementById('editMarkdown').value = article.markdown;
-
-      // Render Pros & Cons / Highlights
-      document.getElementById('prosList').innerHTML = article.pros.map(p => `<li>${p}</li>`).join('');
-      document.getElementById('consList').innerHTML = article.cons.map(c => `<li>${c}</li>`).join('');
-
       updateLive();
       document.getElementById('articleModal').classList.remove('hidden');
       document.body.style.overflow = 'hidden';
     }
 
-    function closeArticle() {
+    function closeArticleModal() {
       document.getElementById('articleModal').classList.add('hidden');
       document.body.style.overflow = 'auto';
     }
@@ -518,7 +455,6 @@ Both platforms lead the work management space, but they cater to slightly differ
       document.getElementById('modalCategory').innerText = category.toUpperCase();
       document.getElementById('cardCategory').innerText = category.toUpperCase() + " PUBLICATION";
 
-      // Parse markdown to HTML
       if (typeof marked !== 'undefined') {
         document.getElementById('articleBody').innerHTML = marked.parse(markdownText);
       }
@@ -527,7 +463,6 @@ Both platforms lead the work management space, but they cater to slightly differ
     function toggleEditor() {
       const editor = document.getElementById('editorContainer');
       const view = document.getElementById('viewContainer');
-      
       if (editor.classList.contains('hidden')) {
         editor.classList.remove('hidden');
         view.classList.remove('lg:col-span-12');
