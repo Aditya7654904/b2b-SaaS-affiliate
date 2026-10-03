@@ -1,0 +1,41 @@
+[
+  {
+    "id": "crm-automation",
+    "category": "SALES & PIPELINE",
+    "title": "Enterprise Sales & CRM Stack",
+    "description": "Integrated sales stack designed for high-volume lead capture, CRM deal tracking, and automated follow-ups.",
+    "estimated_cost": "$85/mo / seat",
+    "tools": [
+      { "name": "HubSpot CRM", "role": "Pipeline & Deal Engine" },
+      { "name": "Zapier", "role": "Middleware Automation" },
+      { "name": "Typeform", "role": "High-Converting Lead Intake" }
+    ],
+    "review_slug": "top-crm-tools-2026"
+  },
+  {
+    "id": "async-ops",
+    "category": "PRODUCTIVITY & WORKSPACE",
+    "title": "Async Remote Operations Stack",
+    "description": "Zero-friction stack designed for distributed engineering and product teams working across timezones.",
+    "estimated_cost": "$25/mo / seat",
+    "tools": [
+      { "name": "Notion AI", "role": "Documentation & Wiki" },
+      { "name": "ClickUp", "role": "Sprint & Task Hierarchy" },
+      { "name": "Slack", "role": "Real-time Messaging" }
+    ],
+    "review_slug": "notion-vs-clickup"
+  },
+  {
+    "id": "inbound-growth",
+    "category": "SEO & CONTENT",
+    "title": "Inbound Organic Growth Stack",
+    "description": "End-to-end publishing, keyword research, and distribution setup for modern content marketing.",
+    "estimated_cost": "$150/mo total",
+    "tools": [
+      { "name": "SEMrush", "role": "Keyword & Competitor Audit" },
+      { "name": "Substack", "role": "Audience Newsletter Engine" },
+      { "name": "Airtable", "role": "Content Calendar Database" }
+    ],
+    "review_slug": "best-ai-writing-software"
+  }
+]
