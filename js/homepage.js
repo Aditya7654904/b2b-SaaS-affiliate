@@ -1,6 +1,22 @@
 let toolsDatabase = {};
 
+// Only grants editor access on localhost OR when ?edit=moira2026 is in the URL
+const isAuthorizedEditor =
+  window.location.hostname === "localhost" ||
+  window.location.hostname === "127.0.0.1" ||
+  new URLSearchParams(window.location.search).get("edit") === "moira2026";
+
 document.addEventListener("DOMContentLoaded", () => {
+  // Reveal the editor toggle button ONLY for you
+  const toggleBtn = document.getElementById("editorToggleBtn");
+  if (toggleBtn) {
+    if (isAuthorizedEditor) {
+      toggleBtn.classList.remove("hidden");
+    } else {
+      toggleBtn.classList.add("hidden");
+    }
+  }
+
   fetch("data/featured-tools.json")
     .then((response) => {
       if (!response.ok) throw new Error("Failed to load featured tools JSON");
@@ -51,12 +67,23 @@ function openArticleModal(key) {
     markdown: "# Overview\n\nContent loading..."
   };
 
+  // Always force the editor closed and preview full-width for non-authorized visitors
+  if (!isAuthorizedEditor) {
+    const editor = document.getElementById("editorContainer");
+    const view = document.getElementById("viewContainer");
+    if (editor) editor.classList.add("hidden");
+    if (view) {
+      view.classList.remove("lg:col-span-8");
+      view.classList.add("lg:col-span-12");
+    }
+  }
+
   document.getElementById("editTitle").value = article.title;
   document.getElementById("editRating").value = article.rating;
   document.getElementById("editPrice").value = article.price;
   document.getElementById("editCategory").value = article.category;
   document.getElementById("editMarkdown").value = article.markdown;
-  
+
   updateLive();
   document.getElementById("articleModal").classList.remove("hidden");
   document.body.style.overflow = "hidden";
@@ -86,6 +113,9 @@ function updateLive() {
 }
 
 function toggleEditor() {
+  // Block unauthorized users from toggling the editor
+  if (!isAuthorizedEditor) return;
+
   const editor = document.getElementById("editorContainer");
   const view = document.getElementById("viewContainer");
   if (editor.classList.contains("hidden")) {
