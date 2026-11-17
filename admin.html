@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-T8X7V8P3');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moira Admin - Content Management & Article Editor</title>
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23000000'/%3E%3Cpath d='M18 75V32l24 22-24 21z' fill='none' stroke='%23ffffff' stroke-width='6' stroke-linejoin='round'/%3E%3Cpath d='M32 62l16-16 14 14 18-20' fill='none' stroke='%23ffffff' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M82 75V48' fill='none' stroke='%23ffffff' stroke-width='6' stroke-linecap='round'/%3E%3Cpolygon points='84,30 68,34 80,46' fill='%23ffffff'/%3E%3Ccircle cx='48' cy='46' r='5' fill='%23000000' stroke='%23ffffff' stroke-width='4'/%3E%3Ccircle cx='62' cy='60' r='5' fill='%23000000' stroke='%23ffffff' stroke-width='4'/%3E%3C/svg%3E">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #000000; color: #ffffff; }
+    h1, h2, h3, h4, .brand-font { font-family: 'Space Grotesk', sans-serif; }
+    .stark-card { background-color: #000000; border: 2px solid #ffffff; box-shadow: 4px 4px 0px #ffffff; transition: all 0.2s ease; }
+    .stark-button { background-color: #ffffff; color: #000000; font-weight: 700; border: 2px solid #ffffff; box-shadow: 3px 3px 0px #888888; transition: all 0.15s ease; }
+    .stark-button:hover { background-color: #e5e5e5; transform: translate(-1px, -1px); box-shadow: 5px 5px 0px #ffffff; }
+    .prose-stark h1, .prose-stark h2 { color: #ffffff; font-family: 'Space Grotesk', sans-serif; margin-top: 1rem; margin-bottom: 0.5rem; font-weight: 700; text-transform: uppercase; }
+    .prose-stark p { color: #d4d4d8; margin-bottom: 0.75rem; line-height: 1.6; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-white selection:text-black">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8X7V8P3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <header class="border-b-2 border-white bg-black sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="text-3xl font-bold tracking-tight brand-font bg-white text-black px-3 py-1">MOIRA</a>
+        <span class="border border-white text-xs font-mono px-2 py-1 bg-zinc-900 text-zinc-300 uppercase">CMS Admin Dashboard</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <button onclick="createNewPost()" class="stark-button px-4 py-2 text-xs uppercase tracking-wider">+ New Article</button>
+        <button onclick="exportData()" class="border border-white px-4 py-2 text-xs font-mono uppercase hover:bg-white hover:text-black transition-colors">Download posts.json</button>
+        <a href="index.html" class="border border-zinc-700 px-3 py-2 text-xs font-mono text-zinc-400 hover:text-white">Exit →</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 py-10 flex-1 w-full grid grid-cols-1 lg:grid-cols-12 gap-8">
+    <div class="lg:col-span-4 space-y-4">
+      <div class="border-b border-zinc-800 pb-3 flex justify-between items-center">
+        <h2 class="text-lg font-bold uppercase brand-font">All Posts & Reviews</h2>
+        <span id="postCount" class="text-xs font-mono text-zinc-400">0 items</span>
+      </div>
+      <div id="postsList" class="space-y-3 max-h-[70vh] overflow-y-auto pr-2"></div>
+    </div>
+
+    <div class="lg:col-span-8 space-y-6 bg-zinc-950 p-6 border-2 border-white">
+      <div class="flex items-center justify-between border-b border-zinc-800 pb-4">
+        <div>
+          <span id="editorStatus" class="text-xs font-mono text-zinc-400 uppercase">EDITING ITEM</span>
+          <h2 id="editorHeading" class="text-2xl font-bold uppercase brand-font mt-1">Select an article to edit</h2>
+        </div>
+        <div class="flex gap-2">
+          <button onclick="saveCurrentPost()" class="stark-button text-xs px-4 py-2 uppercase">Save Changes</button>
+          <button onclick="deleteCurrentPost()" class="border border-red-500 text-red-400 text-xs px-3 py-2 uppercase hover:bg-red-500 hover:text-black">Delete</button>
+        </div>
+      </div>
+
+      <div id="editorForm" class="space-y-4 font-mono text-xs hidden">
+        <input type="hidden" id="postId">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-zinc-400 mb-1">TITLE</label>
+            <input type="text" id="postTitle" oninput="autoUpdatePreview()" class="w-full bg-black border border-zinc-700 p-2 text-white font-sans focus:border-white outline-none">
+          </div>
+          <div>
+            <label class="block text-zinc-400 mb-1">SLUG (URL Friendly ID)</label>
+            <input type="text" id="postSlug" class="w-full bg-black border border-zinc-700 p-2 text-white focus:border-white outline-none">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div>
+            <label class="block text-zinc-400 mb-1">CATEGORY</label>
+            <input type="text" id="postCategory" oninput="autoUpdatePreview()" class="w-full bg-black border border-zinc-700 p-2 text-white focus:border-white outline-none">
+          </div>
+          <div>
+            <label class="block text-zinc-400 mb-1">RATING / BADGE</label>
+            <input type="text" id="postRating" oninput="autoUpdatePreview()" class="w-full bg-black border border-zinc-700 p-2 text-white focus:border-white outline-none">
+          </div>
+          <div>
+            <label class="block text-zinc-400 mb-1">PRICE / METRIC</label>
+            <input type="text" id="postPrice" oninput="autoUpdatePreview()" class="w-full bg-black border border-zinc-700 p-2 text-white focus:border-white outline-none">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-zinc-400 mb-1">SHORT DESCRIPTION (Card View)</label>
+          <textarea id="postDescription" rows="2" class="w-full bg-black border border-zinc-700 p-2 text-white focus:border-white outline-none font-sans text-sm"></textarea>
+        </div>
+
+        <div>
+          <label class="block text-zinc-400 mb-1">MARKDOWN BODY CONTENT</label>
+          <textarea id="postMarkdown" rows="10" oninput="autoUpdatePreview()" class="w-full bg-black border border-zinc-700 p-2 text-white font-mono text-xs focus:border-white outline-none leading-relaxed"></textarea>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-zinc-800 space-y-4">
+          <span class="text-xs font-mono text-zinc-400 uppercase tracking-widest">Live Reader Preview</span>
+          <div class="bg-black border-2 border-white p-6 space-y-4">
+            <h3 id="previewTitle" class="text-xl font-bold uppercase brand-font">Title Preview</h3>
+            <div id="previewMarkdown" class="prose-stark text-sm"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    let postsData = [
+      {
+        id: "hubspot",
+        title: "HubSpot CRM Platform Review",
+        rating: "★ 4.8 / 5.0",
+        price: "From $15/mo",
+        category: "Sales CRM",
+        description: "Enterprise customer relationship and lead routing engine for scaling B2B companies.",
+        slug: "hubspot-review",
+        markdown: "# Executive Summary\n\nHubSpot CRM offers scaling enterprise teams a consolidated solution for contact pipeline management, automated email sequences, and revenue tracking."
+      },
+      {
+        id: "notion",
+        title: "Notion AI Workspace Evaluation",
+        rating: "★ 4.7 / 5.0",
+        price: "From $8/mo",
+        category: "Productivity",
+        description: "Connected workspace combining team wikis, project databases, and local LLM search.",
+        slug: "notion-vs-clickup",
+        markdown: "# Executive Summary\n\nNotion combines docs, wikis, and relational databases into a single canvas with local generative AI search capabilities."
+      }
+    ];
+
+    let currentActiveId = null;
+
+    async function initAdmin() {
+      const saved = localStorage.getItem('moira_cms_posts');
+      if (saved) {
+        try { postsData = JSON.parse(saved); } catch(e) {}
+      } else {
+        try {
+          const res = await fetch('posts.json');
+          if (res.ok) postsData = await res.json();
+        } catch(e) {}
+      }
+      renderPostsList();
+      if (postsData.length > 0) selectPost(postsData[0].id);
+    }
+
+    function renderPostsList() {
+      const listEl = document.getElementById('postsList');
+      document.getElementById('postCount').innerText = postsData.length + ' items';
+      listEl.innerHTML = postsData.map(p => `
+        <div onclick="selectPost('${p.id}')" class="stark-card p-4 cursor-pointer bg-zinc-950 hover:bg-zinc-900 transition-colors ${currentActiveId === p.id ? 'border-l-8 border-l-white' : ''}">
+          <div class="flex justify-between items-start">
+            <span class="text-xs font-mono text-zinc-400 uppercase">${p.category}</span>
+            <span class="text-xs font-mono bg-white text-black px-1.5 py-0.5">${p.rating}</span>
+          </div>
+          <h3 class="font-bold uppercase brand-font text-base mt-1 text-white">${p.title}</h3>
+          <p class="text-xs text-zinc-400 truncate mt-1">${p.description}</p>
+        </div>
+      `).join('');
+    }
+
+    function selectPost(id) {
+      currentActiveId = id;
+      const post = postsData.find(p => p.id === id);
+      if (!post) return;
+
+      document.getElementById('editorForm').classList.remove('hidden');
+      document.getElementById('postId').value = post.id;
+      document.getElementById('postTitle').value = post.title;
+      document.getElementById('postSlug').value = post.slug || post.id;
+      document.getElementById('postCategory').value = post.category;
+      document.getElementById('postRating').value = post.rating;
+      document.getElementById('postPrice').value = post.price;
+      document.getElementById('postDescription').value = post.description;
+      document.getElementById('postMarkdown').value = post.markdown;
+      document.getElementById('editorHeading').innerText = post.title;
+      document.getElementById('editorStatus').innerText = "EDITING ID: " + post.id;
+
+      autoUpdatePreview();
+      renderPostsList();
+    }
+
+    function autoUpdatePreview() {
+      const title = document.getElementById('postTitle').value;
+      const md = document.getElementById('postMarkdown').value;
+      document.getElementById('previewTitle').innerText = title;
+      if (typeof marked !== 'undefined') {
+        document.getElementById('previewMarkdown').innerHTML = marked.parse(md);
+      }
+    }
+
+    function saveCurrentPost() {
+      const id = document.getElementById('postId').value;
+      const index = postsData.findIndex(p => p.id === id);
+      if (index === -1) return;
+
+      postsData[index] = {
+        id: id,
+        title: document.getElementById('postTitle').value,
+        slug: document.getElementById('postSlug').value,
+        category: document.getElementById('postCategory').value,
+        rating: document.getElementById('postRating').value,
+        price: document.getElementById('postPrice').value,
+        description: document.getElementById('postDescription').value,
+        markdown: document.getElementById('postMarkdown').value
+      };
+
+      localStorage.setItem('moira_cms_posts', JSON.stringify(postsData));
+      renderPostsList();
+      selectPost(id);
+      alert('Changes saved successfully to browser storage!');
+    }
+
+    function createNewPost() {
+      const newId = 'post_' + Date.now();
+      const newPost = {
+        id: newId,
+        title: "NEW B2B SAAS ARTICLE",
+        rating: "★ 5.0 / 5.0",
+        price: "From $10/mo",
+        category: "Software Review",
+        description: "Add a short description of the software or comparison here.",
+        slug: "new-article-" + Date.now(),
+        markdown: "# Introduction\n\nWrite your markdown content here..."
+      };
+      postsData.unshift(newPost);
+      localStorage.setItem('moira_cms_posts', JSON.stringify(postsData));
+      selectPost(newId);
+    }
+
+    function deleteCurrentPost() {
+      const id = document.getElementById('postId').value;
+      if (postsData.length <= 1) {
+        alert('You must keep at least one article.');
+        return;
+      }
+      if (confirm('Are you sure you want to delete this article?')) {
+        postsData = postsData.filter(p => p.id !== id);
+        localStorage.setItem('moira_cms_posts', JSON.stringify(postsData));
+        renderPostsList();
+        selectPost(postsData[0].id);
+      }
+    }
+
+    function exportData() {
+      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(postsData, null, 2));
+      const dl = document.createElement('a');
+      dl.setAttribute("href", dataStr);
+      dl.setAttribute("download", "posts.json");
+      document.body.appendChild(dl);
+      dl.click();
+      dl.remove();
+    }
+
+    document.addEventListener('DOMContentLoaded', initAdmin);
+  </script>
+</body>
+</html>
