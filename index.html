@@ -12,7 +12,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Moira - B2B SaaS Recommendations & Tech Stacks</title>
   
-  <!-- App / Browser Tab Icon (SVG Data URI so it works immediately without extra files) -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23000000'/%3E%3Cpath d='M18 75V32l24 22-24 21z' fill='none' stroke='%23ffffff' stroke-width='6' stroke-linejoin='round'/%3E%3Cpath d='M32 62l16-16 14 14 18-20' fill='none' stroke='%23ffffff' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M82 75V48' fill='none' stroke='%23ffffff' stroke-width='6' stroke-linecap='round'/%3E%3Cpolygon points='84,30 68,34 80,46' fill='%23ffffff'/%3E%3Ccircle cx='48' cy='46' r='5' fill='%23000000' stroke='%23ffffff' stroke-width='4'/%3E%3Ccircle cx='62' cy='60' r='5' fill='%23000000' stroke='%23ffffff' stroke-width='4'/%3E%3C/svg%3E">
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -21,61 +20,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: #000000;
-      color: #ffffff;
-    }
-    h1, h2, h3, h4, .brand-font {
-      font-family: 'Space Grotesk', sans-serif;
-    }
-    .stark-card {
-      background-color: #000000;
-      border: 2px solid #ffffff;
-      box-shadow: 4px 4px 0px #ffffff;
-      transition: all 0.2s ease;
-    }
-    .stark-card:hover {
-      transform: translate(-2px, -2px);
-      box-shadow: 6px 6px 0px #ffffff;
-    }
-    .stark-button {
-      background-color: #ffffff;
-      color: #000000;
-      font-weight: 700;
-      border: 2px solid #ffffff;
-      box-shadow: 3px 3px 0px #888888;
-      transition: all 0.15s ease;
-    }
-    .stark-button:hover {
-      background-color: #e5e5e5;
-      transform: translate(-1px, -1px);
-      box-shadow: 5px 5px 0px #ffffff;
-    }
-    .prose-stark h1, .prose-stark h2, .prose-stark h3 {
-      color: #ffffff;
-      font-family: 'Space Grotesk', sans-serif;
-      margin-top: 1.5rem;
-      margin-bottom: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-    .prose-stark h1 { font-size: 1.875rem; border-bottom: 2px solid #333; padding-bottom: 0.5rem; }
-    .prose-stark h2 { font-size: 1.5rem; }
-    .prose-stark h3 { font-size: 1.25rem; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #000000; color: #ffffff; }
+    h1, h2, h3, h4, .brand-font { font-family: 'Space Grotesk', sans-serif; }
+    .stark-card { background-color: #000000; border: 2px solid #ffffff; box-shadow: 4px 4px 0px #ffffff; transition: all 0.2s ease; }
+    .stark-card:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0px #ffffff; }
+    .stark-button { background-color: #ffffff; color: #000000; font-weight: 700; border: 2px solid #ffffff; box-shadow: 3px 3px 0px #888888; transition: all 0.15s ease; }
+    .stark-button:hover { background-color: #e5e5e5; transform: translate(-1px, -1px); box-shadow: 5px 5px 0px #ffffff; }
+    .prose-stark h1, .prose-stark h2, .prose-stark h3 { color: #ffffff; font-family: 'Space Grotesk', sans-serif; margin-top: 1.5rem; margin-bottom: 0.75rem; font-weight: 700; text-transform: uppercase; }
     .prose-stark p { color: #d4d4d8; margin-bottom: 1rem; line-height: 1.7; }
-    .prose-stark ul { list-style-type: disc; padding-left: 1.25rem; color: #d4d4d8; margin-bottom: 1rem; }
-    .prose-stark li { margin-bottom: 0.35rem; }
-    .prose-stark strong { color: #ffffff; font-weight: 700; }
   </style>
 </head>
 <body class="min-h-screen flex flex-col selection:bg-white selection:text-black">
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8X7V8P3"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8X7V8P3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <!-- Header Navigation -->
   <header class="border-b-2 border-white bg-black sticky top-0 z-40">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       <div class="flex items-center gap-3">
@@ -84,238 +42,63 @@
       <nav class="hidden md:flex items-center gap-8 text-sm font-semibold tracking-wide uppercase">
         <a href="#featured-tools" class="hover:underline underline-offset-4 decoration-2">Tools</a>
         <a href="stack.html" class="hover:underline underline-offset-4 decoration-2">Stacks Directory</a>
-        <a href="#articles" class="hover:underline underline-offset-4 decoration-2">Articles & Markdown Posts</a>
-        <a href="#framework" class="hover:underline underline-offset-4 decoration-2">Methodology</a>
+        <a href="#articles" class="hover:underline underline-offset-4 decoration-2">Articles Vault</a>
+        <a href="admin.html" class="text-amber-300 hover:underline underline-offset-4 decoration-2">⚡ Admin CMS</a>
       </nav>
       <div class="flex items-center gap-3">
-        <a href="stack.html" class="stark-button px-5 py-2.5 text-sm uppercase tracking-wider">
-          Explore Stacks
-        </a>
+        <a href="stack.html" class="stark-button px-5 py-2.5 text-sm uppercase tracking-wider">Explore Stacks</a>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section (Updated with Moira Vector Logo) -->
   <section class="border-b-2 border-white py-20 px-6">
     <div class="max-w-4xl mx-auto text-center space-y-6">
       <div class="inline-block border border-white px-4 py-1 text-xs font-mono uppercase tracking-widest bg-zinc-900">
         Modular B2B Software Vault
       </div>
-
-      <!-- Moira Custom Logo & Tagline -->
       <div class="flex flex-col items-center justify-center py-2">
-        <h1 class="sr-only">Moira - Bringing positive difference in business operations</h1>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-7">
-          <!-- Geometric Growth M Mark -->
           <svg class="w-28 h-24 sm:w-36 sm:h-28 shrink-0" viewBox="0 0 180 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Left M Vertical & Inner Triangle -->
             <path d="M16 122V32L66 74L16 122Z" stroke="#FFFFFF" stroke-width="10" stroke-linejoin="miter"/>
-            <!-- Rising Graph Line -->
             <path d="M16 122L82 56L114 86L154 42" stroke="#FFFFFF" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter"/>
-            <!-- Lower Wave Line -->
             <path d="M52 86L72 106L98 82L134 118V76" stroke="#FFFFFF" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter"/>
-            <!-- Arrowhead -->
             <polygon points="172,22 132,32 162,62" fill="#FFFFFF"/>
-            <!-- Data Nodes -->
             <circle cx="82" cy="56" r="10" fill="#000000" stroke="#FFFFFF" stroke-width="8"/>
             <circle cx="114" cy="86" r="10" fill="#000000" stroke="#FFFFFF" stroke-width="8"/>
             <circle cx="72" cy="106" r="10" fill="#000000" stroke="#FFFFFF" stroke-width="8"/>
           </svg>
-
-          <!-- Wordmark & Tagline -->
           <div class="text-center sm:text-left">
-            <div class="text-6xl sm:text-8xl font-bold tracking-tight leading-none text-white" style="font-family: 'Plus Jakarta Sans', sans-serif;">
-              moira
-            </div>
-            <p class="text-sm sm:text-lg text-zinc-200 tracking-wide mt-2 font-medium">
-              Bringing positive difference in business operations
-            </p>
+            <div class="text-6xl sm:text-8xl font-bold tracking-tight leading-none text-white" style="font-family: 'Plus Jakarta Sans', sans-serif;">moira</div>
+            <p class="text-sm sm:text-lg text-zinc-200 tracking-wide mt-2 font-medium">Bringing positive difference in business operations</p>
           </div>
         </div>
       </div>
-
-      <p class="text-lg text-zinc-300 max-w-2xl mx-auto font-normal">
-        Curated SaaS stacks, deep-dive Markdown reviews, and comparative analyses for high-growth tech teams.
-      </p>
-      <div class="pt-4 flex flex-wrap justify-center gap-4">
-        <a href="stack.html" class="stark-button px-8 py-3.5 text-base uppercase">
-          View Software Stacks →
-        </a>
-        <a href="#articles" class="border-2 border-white px-8 py-3.5 text-base font-bold uppercase hover:bg-white hover:text-black transition-colors">
-          Browse Articles Vault
-        </a>
-      </div>
+      <p class="text-lg text-zinc-300 max-w-2xl mx-auto font-normal">Curated SaaS stacks, deep-dive Markdown reviews, and comparative analyses for high-growth tech teams.</p>
     </div>
   </section>
 
-  <!-- Curated Software Stacks Highlight (Links to stack.html) -->
-  <section class="py-16 px-6 border-b-2 border-white max-w-7xl mx-auto w-full">
-    <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
-      <div>
-        <span class="font-mono text-xs text-zinc-400 uppercase tracking-widest">Stack Directory</span>
-        <h2 class="text-3xl font-bold uppercase mt-1">Curated Tech Bundles</h2>
-      </div>
-      <a href="stack.html" class="text-xs font-mono uppercase text-zinc-300 hover:text-white underline underline-offset-4">View All Stacks in Directory →</a>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="stark-card p-6 flex flex-col justify-between bg-zinc-950">
-        <div class="space-y-3">
-          <span class="border border-white text-xs px-2 py-0.5 font-mono">SALES & CRM</span>
-          <h3 class="text-2xl font-bold uppercase brand-font">Best CRM + Automation Stack</h3>
-          <p class="text-sm text-zinc-300">HubSpot CRM + Zapier + Typeform setup engineered for rapid inbound pipeline routing.</p>
-        </div>
-        <a href="stack.html?id=crm-automation" class="mt-6 inline-block text-xs font-bold uppercase underline underline-offset-4">Explore Stack Architecture →</a>
-      </div>
-
-      <div class="stark-card p-6 flex flex-col justify-between bg-zinc-950">
-        <div class="space-y-3">
-          <span class="border border-white text-xs px-2 py-0.5 font-mono">PRODUCTIVITY</span>
-          <h3 class="text-2xl font-bold uppercase brand-font">Async Remote Operations</h3>
-          <p class="text-sm text-zinc-300">Notion AI + ClickUp + Slack configuration for asynchronous documentation and sprint delivery.</p>
-        </div>
-        <a href="stack.html?id=async-ops" class="mt-6 inline-block text-xs font-bold uppercase underline underline-offset-4">Explore Stack Architecture →</a>
-      </div>
-
-      <div class="stark-card p-6 flex flex-col justify-between bg-zinc-950">
-        <div class="space-y-3">
-          <span class="border border-white text-xs px-2 py-0.5 font-mono">SEO & GROWTH</span>
-          <h3 class="text-2xl font-bold uppercase brand-font">Inbound Marketing Hub</h3>
-          <p class="text-sm text-zinc-300">SEMrush + Substack + Cloudflare setup for organic rank acquisition and newsletter growth.</p>
-        </div>
-        <a href="stack.html?id=inbound-growth" class="mt-6 inline-block text-xs font-bold uppercase underline underline-offset-4">Explore Stack Architecture →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Featured SaaS Tools -->
+  <!-- Featured Tools Grid (Dynamic from posts.json / localStorage) -->
   <section id="featured-tools" class="py-20 px-6 border-b-2 border-white max-w-7xl mx-auto w-full">
     <div class="mb-12">
       <span class="font-mono text-xs text-zinc-400 uppercase tracking-widest">SaaS Intelligence Catalog</span>
       <h2 class="text-3xl font-bold uppercase mt-1">Featured Platforms</h2>
     </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="stark-card p-6 flex flex-col justify-between">
-        <div class="space-y-4">
-          <div class="flex justify-between items-start">
-            <span class="font-bold text-xl uppercase brand-font">HubSpot CRM</span>
-            <span class="bg-white text-black font-mono font-bold text-xs px-2 py-1">★ 4.8/5</span>
-          </div>
-          <p class="text-sm text-zinc-300">Enterprise customer relationship and lead routing engine for scaling B2B companies.</p>
-        </div>
-        <div class="mt-8 pt-4 border-t border-zinc-800 flex items-center justify-between">
-          <a href="post.html?slug=top-crm-tools-2026" class="text-xs font-mono text-zinc-400 hover:text-white underline">View .md Post</a>
-          <button onclick="openArticleModal('hubspot')" class="stark-button text-xs px-3 py-1.5 uppercase">Live Preview</button>
-        </div>
-      </div>
-
-      <div class="stark-card p-6 flex flex-col justify-between">
-        <div class="space-y-4">
-          <div class="flex justify-between items-start">
-            <span class="font-bold text-xl uppercase brand-font">Notion AI</span>
-            <span class="bg-white text-black font-mono font-bold text-xs px-2 py-1">★ 4.7/5</span>
-          </div>
-          <p class="text-sm text-zinc-300">Connected workspace combining team wikis, project databases, and local LLM search.</p>
-        </div>
-        <div class="mt-8 pt-4 border-t border-zinc-800 flex items-center justify-between">
-          <a href="post.html?slug=notion-vs-clickup" class="text-xs font-mono text-zinc-400 hover:text-white underline">View .md Post</a>
-          <button onclick="openArticleModal('notion')" class="stark-button text-xs px-3 py-1.5 uppercase">Live Preview</button>
-        </div>
-      </div>
-
-      <div class="stark-card p-6 flex flex-col justify-between">
-        <div class="space-y-4">
-          <div class="flex justify-between items-start">
-            <span class="font-bold text-xl uppercase brand-font">ClickUp</span>
-            <span class="bg-white text-black font-mono font-bold text-xs px-2 py-1">★ 4.6/5</span>
-          </div>
-          <p class="text-sm text-zinc-300">Customizable project engine designed to unify tasks, goals, and team workload dashboards.</p>
-        </div>
-        <div class="mt-8 pt-4 border-t border-zinc-800 flex items-center justify-between">
-          <a href="post.html?slug=notion-vs-clickup" class="text-xs font-mono text-zinc-400 hover:text-white underline">View .md Post</a>
-          <button onclick="openArticleModal('clickup')" class="stark-button text-xs px-3 py-1.5 uppercase">Live Preview</button>
-        </div>
-      </div>
+    <div id="tools-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="p-6 text-zinc-500 font-mono text-xs">Loading platforms...</div>
     </div>
   </section>
 
-  <!-- Markdown Vault Directory Section (Posts Folder Integration) -->
+  <!-- Articles Vault Grid -->
   <section id="articles" class="py-20 px-6 border-b-2 border-white max-w-7xl mx-auto w-full">
-    <div class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4">
-      <div>
-        <span class="font-mono text-xs text-zinc-400 uppercase tracking-widest">Content Vault</span>
-        <h2 class="text-3xl font-bold uppercase mt-1">Markdown Articles & Reviews</h2>
-      </div>
-      <p class="text-zinc-400 text-sm max-w-md">Posts rendered directly from your local <code>posts/*.md</code> content vault or via <code>post.html</code> viewer.</p>
+    <div class="mb-12">
+      <span class="font-mono text-xs text-zinc-400 uppercase tracking-widest">Content Vault</span>
+      <h2 class="text-3xl font-bold uppercase mt-1">Articles & Reviews</h2>
     </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <!-- Article 1 -->
-      <div class="stark-card p-6 flex flex-col justify-between bg-zinc-950">
-        <div class="space-y-4">
-          <div class="flex items-center justify-between text-xs font-mono text-zinc-400">
-            <span class="border border-white text-white px-2 py-0.5">POST</span>
-            <span>top-crm-tools-2026.md</span>
-          </div>
-          <h3 class="text-2xl font-bold uppercase brand-font">Top CRM Tools in 2026</h3>
-          <p class="text-sm text-zinc-300">A full comparative audit on enterprise CRM platforms, deal tracking, and automation capacity.</p>
-        </div>
-        <div class="mt-8 pt-4 border-t border-zinc-800 flex items-center justify-between gap-2">
-          <a href="post.html?slug=top-crm-tools-2026" class="stark-button text-xs px-3 py-2 uppercase text-center flex-1">Open Article →</a>
-          <button onclick="openArticleModal('top_crm_tools')" class="border border-white text-xs px-3 py-2 uppercase hover:bg-white hover:text-black">Quick Edit</button>
-        </div>
-      </div>
-
-      <!-- Article 2 -->
-      <div class="stark-card p-6 flex flex-col justify-between bg-zinc-950">
-        <div class="space-y-4">
-          <div class="flex items-center justify-between text-xs font-mono text-zinc-400">
-            <span class="border border-white text-white px-2 py-0.5">BATTLE</span>
-            <span>notion-vs-clickup.md</span>
-          </div>
-          <h3 class="text-2xl font-bold uppercase brand-font">Notion vs ClickUp Battle</h3>
-          <p class="text-sm text-zinc-300">Comparing wiki customization, task hierarchies, and long-term workspace scalability.</p>
-        </div>
-        <div class="mt-8 pt-4 border-t border-zinc-800 flex items-center justify-between gap-2">
-          <a href="post.html?slug=notion-vs-clickup" class="stark-button text-xs px-3 py-2 uppercase text-center flex-1">Open Article →</a>
-          <button onclick="openArticleModal('notion_vs_clickup')" class="border border-white text-xs px-3 py-2 uppercase hover:bg-white hover:text-black">Quick Edit</button>
-        </div>
-      </div>
-
-      <!-- Article 3 -->
-      <div class="stark-card p-6 flex flex-col justify-between bg-zinc-950">
-        <div class="space-y-4">
-          <div class="flex items-center justify-between text-xs font-mono text-zinc-400">
-            <span class="border border-white text-white px-2 py-0.5">GUIDE</span>
-            <span>best-ai-writing-software.md</span>
-          </div>
-          <h3 class="text-2xl font-bold uppercase brand-font">Best AI Writing Software</h3>
-          <p class="text-sm text-zinc-300">Evaluating local LLM integration, article generation, and brand voice consistency tools.</p>
-        </div>
-        <div class="mt-8 pt-4 border-t border-zinc-800 flex items-center justify-between gap-2">
-          <a href="post.html?slug=best-ai-writing-software" class="stark-button text-xs px-3 py-2 uppercase text-center flex-1">Open Article →</a>
-          <button onclick="openArticleModal('ai_writing')" class="border border-white text-xs px-3 py-2 uppercase hover:bg-white hover:text-black">Quick Edit</button>
-        </div>
-      </div>
+    <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="p-6 text-zinc-500 font-mono text-xs">Loading articles...</div>
     </div>
   </section>
 
-  <!-- Methodology -->
-  <section id="framework" class="py-20 px-6 border-b-2 border-white max-w-7xl mx-auto w-full">
-    <div class="max-w-3xl">
-      <span class="font-mono text-xs text-zinc-400 uppercase tracking-widest">Our Methodology</span>
-      <h2 class="text-3xl font-bold uppercase mt-1 mb-6">How Moira Evaluates Tools</h2>
-      <ol class="space-y-4 font-mono text-sm border-l-2 border-white pl-6">
-        <li>1. Hands-on workflow deployment for a minimum of 14 days.</li>
-        <li>2. Feature testing across security, custom integrations, and data exports.</li>
-        <li>3. Tiered pricing assessment to identify hidden upgrade costs.</li>
-        <li>4. Direct comparative analysis against leading category competitors.</li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- Footer -->
   <footer class="mt-auto py-12 px-6 bg-black text-zinc-400 text-xs border-t border-zinc-800">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
       <div class="space-y-2 text-center md:text-left">
@@ -324,200 +107,78 @@
       </div>
       <div class="flex items-center gap-6 font-mono">
         <a href="index.html" class="hover:text-white">Home</a>
-        <a href="stack.html" class="hover:text-white">Stacks Directory</a>
-        <a href="post.html?slug=top-crm-tools-2026" class="hover:text-white">Latest Article</a>
+        <a href="stack.html" class="hover:text-white">Stacks</a>
+        <a href="admin.html" class="hover:text-white text-amber-300">Admin Dashboard</a>
       </div>
       <div class="text-center md:text-right max-w-md space-y-2">
-        <p class="text-zinc-500">
-          Affiliate Disclosure: Moira earns a commission when you purchase software through our links, at no extra cost to you.
-        </p>
+        <p class="text-zinc-500">Affiliate Disclosure: Moira earns a commission when you purchase software through our links.</p>
         <p>© 2026 Moira Media. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
-  <!-- FULLSCREEN INTERACTIVE ARTICLE READER & LIVE EDITOR MODAL -->
-  <div id="articleModal" class="fixed inset-0 bg-black z-50 hidden flex flex-col overflow-hidden">
-    <!-- Modal Header -->
-    <div class="border-b-2 border-white bg-black px-6 py-4 flex items-center justify-between shrink-0">
-      <div class="flex items-center gap-4">
-        <span class="text-xl font-bold brand-font bg-white text-black px-2 py-0.5">MOIRA LIVE EDITOR</span>
-        <span id="modalCategory" class="text-xs font-mono border border-zinc-700 px-2 py-1 text-zinc-300">POST PREVIEW</span>
-      </div>
-      <div class="flex items-center gap-3">
-        <button onclick="toggleEditor()" class="border border-white text-xs px-3 py-1.5 font-mono uppercase hover:bg-white hover:text-black transition-colors">
-          ⚡ Toggle Live Editor
-        </button>
-        <button onclick="closeArticleModal()" class="stark-button text-xs px-4 py-1.5 uppercase">
-          ✕ Close
-        </button>
-      </div>
-    </div>
-
-    <!-- Modal Content Grid -->
-    <div class="flex-1 grid grid-cols-1 lg:grid-cols-12 overflow-hidden">
-      <!-- Article Preview (Left / Main) -->
-      <div id="viewContainer" class="lg:col-span-8 overflow-y-auto p-6 md:p-10 border-r-2 border-white space-y-8">
-        <div class="border-2 border-white p-6 bg-zinc-950 space-y-4">
-          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-zinc-800 pb-4">
-            <div>
-              <span id="cardCategory" class="text-xs font-mono text-zinc-400 uppercase tracking-widest">MARKDOWN ARTICLE</span>
-              <h1 id="articleTitle" class="text-3xl font-bold uppercase mt-1 brand-font">Article Title</h1>
-            </div>
-            <div class="text-right">
-              <span id="articleRating" class="bg-white text-black font-mono font-bold text-lg px-3 py-1 inline-block">★ 4.8 / 5.0</span>
-              <div id="articlePrice" class="text-xs font-mono text-zinc-400 mt-1">Starting at $15/mo</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Dynamic Markdown Output -->
-        <div id="articleBody" class="prose-stark"></div>
-
-        <!-- CTA Box -->
-        <div class="border-2 border-white p-6 bg-white text-black space-y-3 mt-10">
-          <h3 class="text-xl font-bold uppercase brand-font">Looking to optimize your software stack?</h3>
-          <p class="text-sm font-medium">Get custom software recommendations and partner deals for your business.</p>
-          <a href="stack.html" class="inline-block bg-black text-white px-6 py-3 font-bold text-xs uppercase tracking-wider hover:bg-zinc-800">
-            Browse All Software Stacks →
-          </a>
-        </div>
-      </div>
-
-      <!-- Live Editor Controls Panel (Right Panel) -->
-      <div id="editorContainer" class="lg:col-span-4 bg-zinc-950 p-6 overflow-y-auto space-y-6 flex flex-col border-t-2 lg:border-t-0 border-white">
-        <div class="border-b border-zinc-800 pb-3">
-          <h2 class="text-lg font-bold uppercase brand-font text-white">Article Live Controls</h2>
-          <p class="text-xs text-zinc-400 font-mono">Edit fields below to test live Markdown rendering instantly.</p>
-        </div>
-
-        <div class="space-y-4 font-mono text-xs">
-          <div>
-            <label class="block text-zinc-400 mb-1">TITLE</label>
-            <input type="text" id="editTitle" oninput="updateLive()" class="w-full bg-black border border-zinc-700 p-2 text-white font-sans focus:border-white outline-none">
-          </div>
-
-          <div class="grid grid-cols-2 gap-3">
-            <div>
-              <label class="block text-zinc-400 mb-1">RATING / TAG</label>
-              <input type="text" id="editRating" oninput="updateLive()" class="w-full bg-black border border-zinc-700 p-2 text-white focus:border-white outline-none">
-            </div>
-            <div>
-              <label class="block text-zinc-400 mb-1">PRICE / METRIC</label>
-              <input type="text" id="editPrice" oninput="updateLive()" class="w-full bg-black border border-zinc-700 p-2 text-white focus:border-white outline-none">
-            </div>
-          </div>
-
-          <div>
-            <label class="block text-zinc-400 mb-1">CATEGORY</label>
-            <input type="text" id="editCategory" oninput="updateLive()" class="w-full bg-black border border-zinc-700 p-2 text-white focus:border-white outline-none">
-          </div>
-
-          <div>
-            <label class="block text-zinc-400 mb-1">MARKDOWN BODY CONTENT</label>
-            <textarea id="editMarkdown" oninput="updateLive()" rows="12" class="w-full bg-black border border-zinc-700 p-2 text-white font-mono text-xs focus:border-white outline-none leading-relaxed"></textarea>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SCRIPT CONTROLLER -->
   <script>
-    const modalArticlesData = {
-      hubspot: {
-        title: "HubSpot CRM Platform Review",
-        rating: "★ 4.8 / 5.0",
-        price: "From $15/mo",
-        category: "Sales CRM",
-        markdown: `# Executive Summary\n\nHubSpot CRM offers scaling enterprise teams a consolidated solution for contact pipeline management, automated email sequences, and revenue tracking.`
-      },
-      notion: {
-        title: "Notion AI Workspace Evaluation",
-        rating: "★ 4.7 / 5.0",
-        price: "From $8/mo",
-        category: "Productivity",
-        markdown: `# Executive Summary\n\nNotion combines docs, wikis, and relational databases into a single canvas with local generative AI search capabilities.`
-      },
-      clickup: {
-        title: "ClickUp Project Engine Deep Dive",
-        rating: "★ 4.6 / 5.0",
-        price: "From $7/mo",
-        category: "Project Management",
-        markdown: `# Executive Summary\n\nClickUp delivers customizable project hierarchy controls and workload dashboards designed to replace separate task tools.`
-      },
-      top_crm_tools: {
-        title: "Top CRM Tools in 2026 (top-crm-tools-2026.md)",
-        rating: "GUIDE",
-        price: "10 Min Read",
-        category: "Sales Stack",
-        markdown: `# Top CRM Tools Breakdown\n\nIn-depth analysis of modern sales CRMs, evaluating pipeline speed, custom objects, and API stability.`
-      },
-      notion_vs_clickup: {
-        title: "Notion vs ClickUp (notion-vs-clickup.md)",
-        rating: "BATTLE",
-        price: "8 Min Read",
-        category: "Workspace Battle",
-        markdown: `# Notion vs ClickUp Battle\n\nComparing document-first knowledge bases against task-first project engines for remote teams.`
-      },
-      ai_writing: {
-        title: "Best AI Writing Software (best-ai-writing-software.md)",
-        rating: "EVALUATION",
-        price: "6 Min Read",
-        category: "AI Content",
-        markdown: `# AI Writing Software Review\n\nEvaluating natural language quality, SEO optimizations, and brand voice customization in modern AI writing platforms.`
+    async function loadIndexContent() {
+      let posts = [];
+      const saved = localStorage.getItem('moira_cms_posts');
+      if (saved) {
+        try { posts = JSON.parse(saved); } catch(e) {}
       }
-    };
-
-    function openArticleModal(key) {
-      const article = modalArticlesData[key] || modalArticlesData['hubspot'];
-      document.getElementById('editTitle').value = article.title;
-      document.getElementById('editRating').value = article.rating;
-      document.getElementById('editPrice').value = article.price;
-      document.getElementById('editCategory').value = article.category;
-      document.getElementById('editMarkdown').value = article.markdown;
-      updateLive();
-      document.getElementById('articleModal').classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeArticleModal() {
-      document.getElementById('articleModal').classList.add('hidden');
-      document.body.style.overflow = 'auto';
-    }
-
-    function updateLive() {
-      const title = document.getElementById('editTitle').value;
-      const rating = document.getElementById('editRating').value;
-      const price = document.getElementById('editPrice').value;
-      const category = document.getElementById('editCategory').value;
-      const markdownText = document.getElementById('editMarkdown').value;
-
-      document.getElementById('articleTitle').innerText = title;
-      document.getElementById('articleRating').innerText = rating;
-      document.getElementById('articlePrice').innerText = price;
-      document.getElementById('modalCategory').innerText = category.toUpperCase();
-      document.getElementById('cardCategory').innerText = category.toUpperCase() + " PUBLICATION";
-
-      if (typeof marked !== 'undefined') {
-        document.getElementById('articleBody').innerHTML = marked.parse(markdownText);
+      
+      if (!posts.length) {
+        try {
+          const res = await fetch('posts.json?v=' + Date.now());
+          posts = await res.json();
+        } catch(e) {
+          posts = [
+            { id: "hubspot", title: "HubSpot CRM Platform Review", rating: "★ 4.8 / 5.0", price: "From $15/mo", category: "Sales CRM", description: "Enterprise customer relationship and lead routing engine for scaling B2B companies.", slug: "hubspot-review", markdown: "# HubSpot Review\n\nDetailed analysis of HubSpot CRM." }
+          ];
+        }
       }
+
+      // Render Tools Grid
+      const toolsGrid = document.getElementById('tools-grid');
+      toolsGrid.innerHTML = posts.map(p => `
+        <div class="stark-card p-6 flex flex-col justify-between bg-zinc-950">
+          <div class="space-y-4">
+            <div class="flex justify-between items-start">
+              <span class="font-bold text-xl uppercase brand-font">${escapeHTML(p.title)}</span>
+              <span class="bg-white text-black font-mono font-bold text-xs px-2 py-1">${escapeHTML(p.rating)}</span>
+            </div>
+            <p class="text-sm text-zinc-300">${escapeHTML(p.description)}</p>
+          </div>
+          <div class="mt-8 pt-4 border-t border-zinc-800 flex items-center justify-between">
+            <span class="text-xs font-mono text-zinc-400">${escapeHTML(p.price)}</span>
+            <a href="post.html?slug=${encodeURIComponent(p.slug || p.id)}" class="stark-button text-xs px-3 py-1.5 uppercase">Read Review →</a>
+          </div>
+        </div>
+      `).join('');
+
+      // Render Articles Vault Grid
+      const articlesGrid = document.getElementById('articles-grid');
+      articlesGrid.innerHTML = posts.map(p => `
+        <div class="stark-card p-6 flex flex-col justify-between bg-zinc-950">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between text-xs font-mono text-zinc-400">
+              <span class="border border-white text-white px-2 py-0.5 uppercase">${escapeHTML(p.category)}</span>
+              <span>${escapeHTML(p.slug || p.id)}.md</span>
+            </div>
+            <h3 class="text-2xl font-bold uppercase brand-font">${escapeHTML(p.title)}</h3>
+            <p class="text-sm text-zinc-300">${escapeHTML(p.description)}</p>
+          </div>
+          <div class="mt-8 pt-4 border-t border-zinc-800 flex items-center justify-between">
+            <span class="text-xs font-mono text-zinc-400">${escapeHTML(p.rating)}</span>
+            <a href="post.html?slug=${encodeURIComponent(p.slug || p.id)}" class="stark-button text-xs px-3 py-1.5 uppercase">Open Article →</a>
+          </div>
+        </div>
+      `).join('');
     }
 
-    function toggleEditor() {
-      const editor = document.getElementById('editorContainer');
-      const view = document.getElementById('viewContainer');
-      if (editor.classList.contains('hidden')) {
-        editor.classList.remove('hidden');
-        view.classList.remove('lg:col-span-12');
-        view.classList.add('lg:col-span-8');
-      } else {
-        editor.classList.add('hidden');
-        view.classList.remove('lg:col-span-8');
-        view.classList.add('lg:col-span-12');
-      }
+    function escapeHTML(str) {
+      return String(str || '').replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
     }
+
+    document.addEventListener('DOMContentLoaded', loadIndexContent);
   </script>
-  <script src="js/homepage.js"></script>
 </body>
 </html>
