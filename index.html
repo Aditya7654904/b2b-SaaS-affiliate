@@ -43,9 +43,11 @@
         <a href="#featured-tools" class="hover:underline underline-offset-4 decoration-2">Tools</a>
         <a href="stack.html" class="hover:underline underline-offset-4 decoration-2">Stacks Directory</a>
         <a href="#articles" class="hover:underline underline-offset-4 decoration-2">Articles Vault</a>
+        <a href="subscribe.html" class="hover:underline underline-offset-4 decoration-2">Newsletter</a>
         <a href="admin.html" class="text-amber-300 hover:underline underline-offset-4 decoration-2">⚡ Admin CMS</a>
       </nav>
       <div class="flex items-center gap-3">
+        <a href="subscribe.html" class="border-2 border-white px-4 py-2 text-sm font-bold uppercase tracking-wider hover:bg-zinc-900 transition">Subscribe</a>
         <a href="stack.html" class="stark-button px-5 py-2.5 text-sm uppercase tracking-wider">Explore Stacks</a>
       </div>
     </div>
@@ -99,7 +101,38 @@
     </div>
   </section>
 
-  <footer class="mt-auto py-12 px-6 bg-black text-zinc-400 text-xs border-t border-zinc-800">
+  <!-- Newsletter Signup Section (Connected to Brevo) -->
+  <section id="newsletter" class="py-20 px-6 max-w-4xl mx-auto w-full">
+    <div class="stark-card p-8 sm:p-12 bg-zinc-950 text-center space-y-6">
+      <div class="inline-block border border-white px-3 py-1 text-xs font-mono uppercase tracking-widest bg-black">
+        Weekly B2B Briefing
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-bold uppercase tracking-tight">Join the Moira B2B Insider</h2>
+      <p class="text-zinc-300 max-w-xl mx-auto text-base">
+        Vetted B2B software breakdowns and lean tech stacks, delivered weekly. Cut through SaaS bloat with actionable comparisons.
+      </p>
+
+      <!-- Replace YOUR_BREVO_FORM_ACTION_URL with the action="..." link from your Brevo HTML code -->
+      <form action="YOUR_BREVO_FORM_ACTION_URL" method="POST" target="_blank" class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto pt-2">
+        <input 
+          type="email" 
+          name="EMAIL" 
+          required 
+          placeholder="Enter your work email..." 
+          class="flex-1 bg-black border-2 border-white px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:bg-zinc-900 font-mono text-sm"
+        />
+        <button type="submit" class="stark-button px-6 py-3 text-sm uppercase tracking-wider shrink-0 cursor-pointer">
+          Subscribe →
+        </button>
+      </form>
+
+      <p class="text-xs font-mono text-zinc-500">
+        Free forever. No spam. Unsubscribe in one click. Or open the <a href="subscribe.html" class="underline text-zinc-300 hover:text-white">dedicated signup page</a>.
+      </p>
+    </div>
+  </section>
+
+  <footer class="mt-auto py-12 px-6 bg-black text-zinc-400 text-xs border-t-2 border-white">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
       <div class="space-y-2 text-center md:text-left">
         <span class="text-white font-bold text-lg brand-font">MOIRA</span>
@@ -108,6 +141,7 @@
       <div class="flex items-center gap-6 font-mono">
         <a href="index.html" class="hover:text-white">Home</a>
         <a href="stack.html" class="hover:text-white">Stacks</a>
+        <a href="subscribe.html" class="hover:text-white">Subscribe</a>
         <a href="admin.html" class="hover:text-white text-amber-300">Admin Dashboard</a>
       </div>
       <div class="text-center md:text-right max-w-md space-y-2">
